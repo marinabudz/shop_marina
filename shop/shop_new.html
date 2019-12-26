@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="shop_new.css">
+        <title>Khaby_shop</title>  
+    </head>
+    <body>
+        <div class="container"  id="alist">
+            <nav class="navbar navbar-default ">
+      
+            <div class="navbar-header aheader">
+                <button type="button" 
+                class="navbar-toggle collapsed"
+                 data-toggle="collapse"
+                 data-target="#collapsemanu"
+                 aria-expanded="false"> 
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="logo-top.png" class="">
+            </div>
+            <div class="row">
+                    <section class="col-xl-12 aheader">
+                      <div class="collapse navbar-collapse" id="collapsemanu">
+                        <ul class="nav navbar-nav ">
+                            <li class="less-down" > 
+                                <a href="#" class="dropdown-toggle aheader__items" data-toggle="dropdown" role="btn" aria-haspopup="true" aria-expanded="false">
+                                    КАТАЛОГ 
+                                <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" >
+                                    <li v-for='item in dropdown_list'><a :href="item.url">{{item.name}}</a></li>
+                                </ul>
+                            </li>
+                            <li class="down" >
+                                <div class="aheader__items" v-for='element in header_menu'> 
+                                    <img src="dot.jpg">
+                                    <a :href='element.url' class="aheader__items down">{{element.name}}</a> 
+                                </div>
+                            </li>
+                        </ul>
+
+                      </div>
+                    <form class="navbar-form navbar-right" role="search">
+                        <div class="form-group">
+                            <button class="btn btn-default button"> <img src="search.png"alt="search"/> Пошук</button>
+                            
+                        </div>
+                    </form>
+                    </section>
+                </div>
+        </nav>
+        <div class="pictures ">
+            <div class="pictures__main col-xl-12 col-md-12 col-sm-12"><img src="1.jpg" alt="main-picture"/></div>
+            <div v-for='item in images' class="col-lg-4 col-md-6  col-sm-12 col-xs-12  pictures__list">
+                <a :href='item.url'>
+                    <span><img :src='item.image'></span>
+                    <p>{{item.title}}</p>
+                    <span>{{item.price}}</span> 
+                </a>
+                <!-- <img :src ="item.image" class='size' height='auto'> -->
+                
+
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="shop.js"></script>
+        <script>
+            var alist = new Vue({
+                el:'#alist',
+                data:{
+                    dropdown_list: [{'url':'#pants','name':'ШТАНИ'}, {'url':'#','name':'СОРОЧКИ'},{'url':'#','name':'СУКНІ'}, {'url':'#','name':'СВЕДРИ'},{'url':'#','name':'КОСТЮМИ'}, {'url':'#','name':'ПІДЖАКИ'}],
+                    header_menu: [{'url':'#','name':'ПРО НАС'},{'url':'#','name':'ОПЛАТА ТА ДОСТАВКА'},{'url':'#','name':'LOOKBOOK'},{'url':'#','name':'КОНТАКТИ'}],
+                    images: [{'url':'#','image' :'./2.jpg', 'title': 'Брюки чорні', 'price': '900₴'}, {'url':'#','image' :'./3.jpg', 'title': 'Піджак в шотланську клітинку Khaby', 'price': '1450₴'}, {'url':'#','image' :'./4.jpg', 'title': 'Спідниця чорна', 'price': '500₴'}, {'url':'#','image' :'./5.jpg', 'title': 'Светр сірий', 'price': '585₴'}, {'url':'#','image' :'./6.jpg', 'title': 'Сорочка молочна', 'price': '560₴'}, {'url':'#','image' :'./7.jpg', 'title': 'Сорочка блакитна', 'price': '560₴'}, {'url':'#','image' :'./8.jpg', 'title': 'Сукня замшева вишнева', 'price': '620₴'}, {'url':'#','image' :'./9.jpg', 'title': 'Спідниця хакі', 'price': '500₴'}, {'url':'#','image' :'./10.jpg', 'title': 'Сукня замшева темно-зелена', 'price': '620₴'}]
+                }
+            })
+        </script>
+    </body>
+    </html>

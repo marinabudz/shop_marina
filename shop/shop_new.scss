@@ -1,0 +1,64 @@
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+$black: #000000;
+$container_width: 1140px;
+
+.aheader{
+    margin-top: 20px;
+
+    &__items{
+        display:inline;
+        margin-right:5px;
+        font-size: 16px;
+        color: $black;
+    }
+   
+}
+.aheader img{
+    padding-right: 10px;
+}
+.down{
+    padding-top:30px;
+}
+.less-down{
+    padding-top:15px;
+}
+.button{
+    margin-top: -120px;
+    margin-right:50px;
+        width:140px;
+        height:33px;
+        text-align: left;
+        font-size: 12px;
+        color: #333333;
+        background-color: #E5E5E5;
+}
+.size{
+    height:200px;
+    width:200px;
+}
+.pictures{
+    margin-bottom: 70px;
+    &__main{
+        margin-bottom: 30px;}
+    &__main img{
+        @media screen and(max-width: $container_width){
+            width:100%;
+ 
+        }}
+    &__list{
+        align-items:center;
+        text-align:center;
+        margin-bottom: 7px;
+        margin-right: auto;
+        margin-left: auto;
+    
+    }
+    &__list img{
+        margin-bottom: 10px;
+    
+    }
+    }
+        
+    
+ 
