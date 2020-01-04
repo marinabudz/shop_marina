@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
 $black: #000000;
 $container_width: 1140px;
-
+body{
+    background-color: azure;
+    font-family: 'Lato', sans-serif;
+}
 .aheader{
     margin-top: 20px;
 
@@ -40,6 +43,10 @@ $container_width: 1140px;
 .pictures{
     margin-bottom: 70px;
     &__main{
+        width:1123px;
+        overflow: hidden;
+        margin-right: auto;
+        margin-left: auto;
         margin-bottom: 30px;}
     &__main img{
         @media screen and(max-width: $container_width){
@@ -49,7 +56,7 @@ $container_width: 1140px;
     &__list{
         align-items:center;
         text-align:center;
-        margin-bottom: 7px;
+        margin-bottom: 50px;
         margin-right: auto;
         margin-left: auto;
     
@@ -58,7 +65,192 @@ $container_width: 1140px;
         margin-bottom: 10px;
     
     }
-    }
-        
+    &__button{
+        width:250px;
+        margin-right: auto;
+        margin-left: auto;
     
- 
+    }
+    &__buttonView{
+        font-size: 16px;
+        width:250px;
+        height: 50px;
+        line-height: 19px;
+        background-color: #000000;
+        color: #FFFFFF;
+    
+    }
+    }
+       
+.review{
+    &__item{
+        text-align: center;
+    }
+    &__itemUser{
+        font-weight: bold;
+        font-size: 16px;
+
+    }
+    &__itemComment{
+        font-size: 14px;
+
+    }
+}
+.review img{
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 179px;
+height: 178px;
+}
+.bottom{
+
+    margin-right: auto;
+    margin-left: auto;
+}
+    .footer{
+        background-color: $black;
+        width:100%;
+        color:white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 14px;
+        padding-top: 20px;
+  
+    
+        &__logo{
+            margin-top: 10px;
+        }
+        &__logo p{
+            
+        }
+        &__logo img{
+            @media screen and(max-width: $container_width){
+                display:none;}
+        }
+        &__links{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            margin-top: -15px;
+            
+        }
+        &__contact{
+            
+        }
+        &__{
+            
+        }
+        &__{
+            
+        }
+        &__{
+            
+        }
+
+    }
+.footer a{
+    color:white;
+}
+  
+
+.about{
+display:flex;
+flex-direction: row;
+margin-bottom: 70px;
+    &__img img{
+        width:550px;
+        overflow: hidden;
+
+    }
+    &__info{
+        width:550px;
+        margin-left:50px;
+        padding-top: 20px;
+    }
+
+    &__infoHeader{
+        font-size: 24px;
+        line-height: 29px;
+        text-transform: uppercase;
+        padding-bottom: 30px;
+
+    }
+
+    &__infoDescription{
+        font-size: 16px;
+        line-height: 150%;
+    }
+    &__infoDescriptionItalic{
+        font-style: italic; 
+        font-size: 24px;
+        padding-top:20px;
+        padding-bottom: 20px;
+
+    }
+}
+
+.delivery{
+    width:82%;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__mainTitle{
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        text-transform: uppercase;
+        text-align: center;
+        padding-bottom: 50px;
+
+    }
+    &__title{
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 22px;
+        padding-bottom: 20px;
+    }
+    &__text{
+        font-size: 18px;
+        line-height: 22px;
+        padding-bottom: 40px;
+    }
+    &__text p{
+        margin-bottom: 20px;
+        margin-top: 20px;
+        
+    }
+    &__text img{
+        
+    }
+    
+}
+
+.contact{
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+    text-align: left;
+    font-size: 16px;
+    line-height: 19px;
+
+    &__title{
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    &__info{
+        font-size: 16px;
+       margin-bottom: 20px;
+    }
+}
+
+.contact a {    color: #000000;
+margin-bottom: 30px;}
+.contact img{ 
+    margin-right: 10px;}

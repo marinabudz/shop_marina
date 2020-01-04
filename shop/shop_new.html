@@ -6,89 +6,76 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
         <link rel="stylesheet" href="shop_new.css">
         <title>Khaby_shop</title>  
     </head>
     <body>
-        <div class="container"  id="alist">
-            <nav class="navbar navbar-default ">
-      
-            <div class="navbar-header aheader">
-                <button type="button" 
-                class="navbar-toggle collapsed"
-                 data-toggle="collapse"
-                 data-target="#collapsemanu"
-                 aria-expanded="false"> 
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <img src="logo-top.png" class="">
+        <div class="container">
+            <div id="alist">
+                <aheader></aheader>
             </div>
-            <div class="row">
-                    <section class="col-xl-12 aheader">
-                      <div class="collapse navbar-collapse" id="collapsemanu">
-                        <ul class="nav navbar-nav ">
-                            <li class="less-down" > 
-                                <a href="#" class="dropdown-toggle aheader__items" data-toggle="dropdown" role="btn" aria-haspopup="true" aria-expanded="false">
-                                    КАТАЛОГ 
-                                <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu" >
-                                    <li v-for='item in dropdown_list'><a :href="item.url">{{item.name}}</a></li>
-                                </ul>
-                            </li>
-                            <li class="down" >
-                                <div class="aheader__items" v-for='element in header_menu'> 
-                                    <img src="dot.jpg">
-                                    <a :href='element.url' class="aheader__items down">{{element.name}}</a> 
-                                </div>
-                            </li>
-                        </ul>
-
-                      </div>
-                    <form class="navbar-form navbar-right" role="search">
-                        <div class="form-group">
-                            <button class="btn btn-default button"> <img src="search.png"alt="search"/> Пошук</button>
-                            
-                        </div>
-                    </form>
-                    </section>
+            <div id="picture">
+                <catalog></catalog>
+            </div>
+            <div class="review">
+                <div class="review__item">
+                    <img src="clients/client1.jpg">
+                    <p class="review__itemUser">Ирина Пахнюк</p>
+                    <p class="review__itemComment">«Добрий вечір,отримала замовлення. Дякую за <br> оперативність. Матеріал,щоправда,не джинс,але <br> модель відповідає зовнішньому вигляду.Розмір теж  <br>підійшов. Дитина в захваті від упакування товару,за це  <br>окреме « Дякую» Будем у вас час від часу робити  <br>замовлення»</p>
                 </div>
-        </nav>
-        <div class="pictures ">
-            <div class="pictures__main col-xl-12 col-md-12 col-sm-12"><img src="1.jpg" alt="main-picture"/></div>
-            <div v-for='item in images' class="col-lg-4 col-md-6  col-sm-12 col-xs-12  pictures__list">
-                <a :href='item.url'>
-                    <span><img :src='item.image'></span>
-                    <p>{{item.title}}</p>
-                    <span>{{item.price}}</span> 
-                </a>
-                <!-- <img :src ="item.image" class='size' height='auto'> -->
-                
 
+                <div class="review__item">
+                    <img src="clients/client2.jpg">
+                    <p class="review__itemUser">Julijaartemchuk</p>
+                    <p class="review__itemComment">«Привіт! Костюм просто нереальний. Коли його <br>одягнула на бранч, тоді розвіялись всі міфи про<br> зручність в такому одязі. Погода була дуже холодна <br>але мені в ньому було тепло і комфортно. Тканина на<br> дотик така, ніби ти немовлятко гладиш, така <br>м’ягесенька) І що саме основне, при сидячому <br>положенні не віддуваються коліна. Думаю для тих <br>кому важливий гарний вигляд, зацінить якість <br>костюма. Тому дуже вдячна, дуже задоволена <br>покупкою і хорошим сервісом»</span></p>
+    
+                </div>
+
+                <div class="review__item">
+                    <img src="clients/client3.jpg">
+                    <p class="review__itemUser">Vitalinaaostapiuk</p>
+                    <p class="review__itemComment">«Доброго дня, отримала сорочку! Якість прекрасна,<br> приємна до тіла, розмір чудово підійшов. Дякую, <br>обов'язково замовлю у вас ще!»</p>
+
+                </div>
+
+                <div class="review__item">
+                    <img src="clients/client4.jpg">
+                    <p class="review__itemUser">Tanianice</p>
+                    <p class="review__itemComment">«Ого, это было быстро 😂 <br>класс! Спасибо вам большое! <br>Платье из льна просто<br> бомбическое! Вы очень<br> молодец!!»</p>
+    
+                </div>
+
+
+                <div class="review__item">
+                    <img src="clients/client5.jpg">
+                    <p class="review__itemUser">Oxanashcheglova</p>
+                    <p class="review__itemComment">«Велике дякую! Все підійшло <br>та дуже сподобалось! Сукня сіла <br>як рідна!»</p>
+
+                </div>
+
+                <div class="review__item">
+                    <img src="clients/client6.jpg">
+                    <p class="review__itemUser">Khrystyna Arkhytka</p>
+                    <p class="review__itemComment">« Іра, сукня просто казкова <br>😍❤️ купую 😌 мені підійшла S. <br>Ти так красиво опакувала 😍. Як <br>завжди краса ❤» </p>
+    
+                </div>
             </div>
         </div>
+            <div id="footer">
+                <afooter></afooter>
+            </div>
+  
 
-        </div>
-    </div>
 
 
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script type="text/javascript" src="slick/slick.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <script src="shop.js"></script>
-        <script>
-            var alist = new Vue({
-                el:'#alist',
-                data:{
-                    dropdown_list: [{'url':'#pants','name':'ШТАНИ'}, {'url':'#','name':'СОРОЧКИ'},{'url':'#','name':'СУКНІ'}, {'url':'#','name':'СВЕДРИ'},{'url':'#','name':'КОСТЮМИ'}, {'url':'#','name':'ПІДЖАКИ'}],
-                    header_menu: [{'url':'#','name':'ПРО НАС'},{'url':'#','name':'ОПЛАТА ТА ДОСТАВКА'},{'url':'#','name':'LOOKBOOK'},{'url':'#','name':'КОНТАКТИ'}],
-                    images: [{'url':'#','image' :'./2.jpg', 'title': 'Брюки чорні', 'price': '900₴'}, {'url':'#','image' :'./3.jpg', 'title': 'Піджак в шотланську клітинку Khaby', 'price': '1450₴'}, {'url':'#','image' :'./4.jpg', 'title': 'Спідниця чорна', 'price': '500₴'}, {'url':'#','image' :'./5.jpg', 'title': 'Светр сірий', 'price': '585₴'}, {'url':'#','image' :'./6.jpg', 'title': 'Сорочка молочна', 'price': '560₴'}, {'url':'#','image' :'./7.jpg', 'title': 'Сорочка блакитна', 'price': '560₴'}, {'url':'#','image' :'./8.jpg', 'title': 'Сукня замшева вишнева', 'price': '620₴'}, {'url':'#','image' :'./9.jpg', 'title': 'Спідниця хакі', 'price': '500₴'}, {'url':'#','image' :'./10.jpg', 'title': 'Сукня замшева темно-зелена', 'price': '620₴'}]
-                }
-            })
-        </script>
     </body>
     </html>
