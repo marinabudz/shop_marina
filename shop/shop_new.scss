@@ -2,9 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
 $black: #000000;
 $container_width: 1140px;
+$lato: 'Lato', sans-serif;
 body{
     background-color: azure;
-    font-family: 'Lato', sans-serif;
+    font-family: $lato;
 }
 .aheader{
     margin-top: 20px;
@@ -40,29 +41,35 @@ body{
     height:200px;
     width:200px;
 }
+
 .pictures{
     margin-bottom: 70px;
+  
+
     &__main{
         width:1123px;
         overflow: hidden;
-        margin-right: auto;
-        margin-left: auto;
+
         margin-bottom: 30px;}
     &__main img{
+
         @media screen and(max-width: $container_width){
             width:100%;
  
         }}
     &__list{
-        align-items:center;
         text-align:center;
         margin-bottom: 50px;
-        margin-right: auto;
-        margin-left: auto;
-    
+        float:left;
+   
+
     }
     &__list img{
         margin-bottom: 10px;
+        height:600px;
+        width: 350px;
+   
+
     
     }
     &__button{
@@ -78,11 +85,30 @@ body{
         line-height: 19px;
         background-color: #000000;
         color: #FFFFFF;
+        
     
     }
     }
-       
+.pictures__list a{
+    color:$black;
+}   
+
+.pictures__list p{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}   
+
+.pictures__list span{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+
+}   
+
 .review{
+
     &__item{
         text-align: center;
     }
@@ -122,9 +148,6 @@ height: 178px;
     
         &__logo{
             margin-top: 10px;
-        }
-        &__logo p{
-            
         }
         &__logo img{
             @media screen and(max-width: $container_width){
@@ -254,3 +277,133 @@ margin-bottom: 70px;
 margin-bottom: 30px;}
 .contact img{ 
     margin-right: 10px;}
+.section{
+
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    font-family: $lato;
+    float: left;
+    margin-right:55px;
+    margin-left: 50px;
+
+    &__item{
+        margin-bottom:30px;
+        margin-left: 58px;
+    }
+
+}
+.section a{
+    color:black;
+}
+
+.item{
+    font-family: $lato;
+    &__photos{
+        float:left;
+        padding-right: 20px;
+
+    }
+
+    &__photosCollection{
+        display: flex;
+        flex-flow: row wrap;
+        text-align: center;
+        align-content: flex-start;
+        width: 112px;
+        height: 112px;
+        float: left;
+        margin-bottom: 60px;
+        
+    }
+
+    &__photosMain{
+        width: 425px;
+        height: 650px;
+        margin-bottom: 15px;
+        
+    }
+
+    &__info{
+        padding-top:30px;
+  
+    }
+
+    &__infoName{
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+    }
+
+    &__infoPrice{
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        margin-bottom: 25px;
+        
+    }
+
+    &__infoAvailability{
+        float:right;
+        margin-top: 11px;
+        margin-right: 250px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        color: #BDBDBD;
+
+        
+    }
+
+    &__infoCharacteristics{
+        margin-bottom: 40px;
+        
+    }
+
+    &__infoTitle{
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 14px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+
+    }
+
+    &__infoDescription{
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+        
+    }
+
+    &__button{
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+        background-color: $black;
+        color: #FFFFFF;
+        width: 216px;
+        height: 48px;
+        border-radius:3px;
+        margin-left: -17px;
+        border: 0px;
+        margin-top: -10px;
+    }
+}
+
+
+
+
+.item__photosCollection img{
+    width: 112px;
+    height: 112px;
+    padding-right: 25px;
+    
+}
+.item__photosMain img{
+    width: 425px;
+    height: 650px;
+}

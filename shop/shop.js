@@ -22,7 +22,7 @@ Vue.component('aheader',{
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <img src="logo/logo-top.png" class="">
+        <a href='shop_new.html'><img src="logo/logo-top.png" class=""></a>
     </div>
     <div class="row">
         <section class="col-xl-12 aheader">
@@ -57,7 +57,7 @@ Vue.component('aheader',{
         data: function(){
             return{
             dropdown_list: [{'url':'#pants','name':'ШТАНИ'}, {'url':'#','name':'СОРОЧКИ'},{'url':'#','name':'СУКНІ'}, {'url':'#','name':'СВЕДРИ'},{'url':'#','name':'КОСТЮМИ'}, {'url':'#','name':'ПІДЖАКИ'}],
-            header_menu: [{'url':'about-us_page/about.html','name':'ПРО НАС'},{'url':'delivery_page/delivery.html','name':'ОПЛАТА ТА ДОСТАВКА'},{'url':'#','name':'LOOKBOOK'},{'url':'contact_page/contact.html','name':'КОНТАКТИ'}]
+            header_menu: [{'url':'about.html','name':'ПРО НАС'},{'url':'delivery.html','name':'ОПЛАТА ТА ДОСТАВКА'},{'url':'lookbook.html','name':'LOOKBOOK'},{'url':'contact.html','name':'КОНТАКТИ'}]
             }
         }
         })
@@ -70,8 +70,8 @@ var alist = new Vue({
 
 Vue.component('catalog',{
     template: `<div class="pictures">
-    <div class="pictures__main col-xl-12 col-md-12 col-sm-12"><img src="catalog_page/1.jpg" alt="main-picture"/></div>
-    <div v-for='item in images' class="col-lg-4 col-md-6  col-sm-12 col-xs-12  pictures__list">
+
+    <div v-for='item in images' class="col-lg-6 col-md-6  col-sm-12 col-xs-12  pictures__list">
         <a :href='item.url'>
             <span><img :src='item.image'></span>
             <p>{{item.title}}</p>
@@ -85,17 +85,18 @@ Vue.component('catalog',{
 </div>`,
     data: function(){
         return{
-        images: [{'url':'#','image' :'catalog_page/2.jpg', 'title': 'Брюки чорні', 'price': '900₴'}, {'url':'#','image' :'catalog_page/3.jpg', 'title': 'Піджак в шотланську клітинку Khaby', 'price': '1450₴'}, {'url':'#','image' :'catalog_page/4.jpg', 'title': 'Спідниця чорна', 'price': '500₴'}, {'url':'#','image' :'./catalog_page/5.jpg', 'title': 'Светр сірий', 'price': '585₴'}, {'url':'#','image' :'./catalog_page/6.jpg', 'title': 'Сорочка молочна', 'price': '560₴'}, {'url':'#','image' :'./catalog_page/7.jpg', 'title': 'Сорочка блакитна', 'price': '560₴'}, {'url':'#','image' :'./catalog_page/8.jpg', 'title': 'Сукня замшева вишнева', 'price': '620₴'}, {'url':'#','image' :'./catalog_page/9.jpg', 'title': 'Спідниця хакі', 'price': '500₴'}, {'url':'#','image' :'./catalog_page/10.jpg', 'title': 'Сукня замшева темно-зелена', 'price': '620₴'}]
+        images: [{'url':'#','image' :'catalog_page/2.jpg', 'title': 'Брюки чорні', 'price': '900₴', 'class': 'item__pants'}, {'url':'#','image' :'catalog_page/3.jpg', 'title': 'Піджак в шотланську клітинку Khaby', 'price': '1450₴'}, {'url':'#','image' :'catalog_page/4.jpg', 'title': 'Спідниця чорна', 'price': '500₴'}, {'url':'#','image' :'./catalog_page/5.jpg', 'title': 'Светр сірий', 'price': '585₴'}, {'url':'#','image' :'./catalog_page/6.jpg', 'title': 'Сорочка молочна', 'price': '560₴'}, {'url':'#','image' :'./catalog_page/7.jpg', 'title': 'Сорочка блакитна', 'price': '560₴'}, {'url':'#','image' :'./catalog_page/8.jpg', 'title': 'Сукня замшева вишнева', 'price': '620₴'}, {'url':'#','image' :'./catalog_page/9.jpg', 'title': 'Спідниця хакі', 'price': '500₴'}, {'url':'#','image' :'./catalog_page/10.jpg', 'title': 'Сукня замшева темно-зелена', 'price': '620₴'}]
     }}
 })
-
-
 
 
 var picture =new Vue({
     el:'#picture',
     data:{
        
+    },
+    methods:{
+
     }
 })
 
@@ -122,7 +123,7 @@ Vue.component('afooter',{
 </div>`,
     data: function(){
         return {
-        footer_links: [{'url':'about-us_page/about.html','name':'ПРО НАС'},{'url':'delivery_page/delivery.html','name':'ОПЛАТА ТА ДОСТАВКА'},{'url':'#','name':'LOOKBOOK'},{'url':'#','name':'КОНТАКТИ'}],
+        footer_links: [{'url':'catalog.html','name':'КАТАЛОГ'},{'url':'about.html','name':'ПРО НАС'},{'url':'lookbook.html','name':'LOOKBOOK'},{'url':'contact.html','name':'КОНТАКТИ'}],
         designer_contact:[{'url':'#','image' :'communication/message.png', 'contact': 'khaby@gmail.com'}, {'url':'#','image' :'communication/phone.png', 'contact': '+38012345678'}, {'url':'#','image' :'communication/instagram.png'}, {'url':'#','image' :'communication/facebook.png'}],
         developers_contact: [{'url':'https://www.behance.net/yul6_okb501','name': 'ДИЗАЙН САЙТУ:'},{'url':'https://www.linkedin.com/in/marynabudz-298b5b138/','name': 'РОЗРОБКА САЙТУ:'}]
     
@@ -142,9 +143,9 @@ var footer = new Vue({
 
 
 
-Vue.component('menu',{
-    template: ` <div class="menu">
-    <div v-for="item in menu_items"><a :href='item.url'> {{item.name}}</a></div>
+Vue.component('amenu',{
+    template: ` <div class="section">
+    <div class='section__item' v-for="item in menu_items"><a :href='item.url'> {{item.name}}</a></div>
 </div>`,
     data: function(){
         return{
@@ -152,15 +153,90 @@ Vue.component('menu',{
         }
     }
 })
-
 var menu = new Vue({
     el:'#menu',
     data:{
-        
-    }, 
+        product: 'сукня замшева вишнева',
+        price: '620₴',
+        selectedVariant: 0,
+        inventory: 0,
+        onSale: true,
+        new: false,
+        details: [{'name':'ОПИС', "description":"Двостороння еко замша дуже м'який матеріал. Виглядає дуже вишукано. За рахунок мінімалістичного дизайну, сукню можна одягнути на важливі події або на прогулянку. Защібається на гудзичок на спинці. Рукав 34"}, {'name':'СКЛАД', 'description':'Еко замша (95% поліестер, 5% еластан)'}, {'name':'РОЗМІРИ:', 'description':'XS, S, М, L'}, {'name':'ВИРОБНИЦТВО', 'description':'Україна'}],
+        variants: [{variantId:1, variantImage:'catalog_page/dresses/1.jpg', variantImageSmall:'catalog_page/dresses/1.jpg'}, {variantId:2, variantImage:'catalog_page/dresses/2.jpg', variantImageSmall:'catalog_page/dresses/2.jpg'},{variantId:3, variantImage:'catalog_page/dresses/3.jpg', variantImageSmall:'catalog_page/dresses/3.jpg'},{variantId:4, variantImage:'catalog_page/dresses/4.jpg', variantImageSmall:'catalog_page/dresses/4.jpg'}]
+    },
+        methods: {
+            updateProduct: function(index){
+                this.selectedVariant = index
+            }},
+        computed:{
+            image(){
+            return this.variants[this.selectedVariant].variantImage
+            }}
+    
 
 })
 
+
+// $('.category__pants').click(
+//     function (){
+//         $('.item__pants').show()
+//         $('.item__shirt').hide()
+//         $('.item__dress').hide()
+//         $('.item__sweter').hide()
+//         $('.item__suit').hide()
+//         $('.item__jacket').hide()
+// });
+
+// $('.category__shirt').click(
+//     function (){
+//         $('.item__pants').hide()
+//         $('.item__shirt').show()
+//         $('.item__dress').hide()
+//         $('.item__sweter').hide()
+//         $('.item__suit').hide()
+//         $('.item__jacket').hide()
+// });
+
+// $('.category__dress').click(
+//     function (){
+//         $('.item__pants').hide()
+//         $('.item__shirt').hide()
+//         $('.item__dress').show()
+//         $('item__sweter').hide()
+//         $('.item__suit').hide()
+//         $('.item__jacket').hide()
+// });
+
+// $('.category__sweter').click(
+//     function (){
+//         $('.item__pants').hide()
+//         $('.item__shirt').hide()
+//         $('.item__dress').hide()
+//         $('.item__sweter').show()
+//         $('.item__suit').hide()
+//         $('.item__jacket').hide()
+// });
+
+// $('.category__suit').click(
+//     function (){
+//         $('.item__pants').hide()
+//         $('.item__shirt').hide()
+//         $('.item__dress').hide()
+//         $('.item__sweter').hide()
+//         $('.item__suit').show()
+//         $('.item__jacket').hide()
+// });
+
+// $('.category__jacket').click(
+//     function (){
+//         $('.item__pants').hide()
+//         $('.item__shirt').hide()
+//         $('.item__dress').hide()
+//         $('.item__sweter').hide()
+//         $('.item__suit').hide()
+//         $('.item__jacket').show()
+// });
 
 
 
