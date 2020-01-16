@@ -10,22 +10,38 @@
         <title>Khaby_shop</title>  
     </head>
     <body>
+        <div id="alist">
+            <aheader></aheader>
+        </div>
         <div class="container">
-            <div id="alist">
-                <aheader></aheader>
-            </div>
+          
             <div id="menu" >
                 <amenu></amenu>
             </div>
             <div id="picture">
-                <catalog></catalog>
-            </div>
+                <div class="catalog pictures">
+                    <div v-for='item in images' class="col-lg-6 col-lg-offset-2 col-md-offset-1 col-md-6 col-xs-offset-2 col-xs-6  pictures__list">
+        
+                        <a :href='item.url'>
+                            <span><img :src='item.image'></span>
+                            <p>{{item.title}}</p>
+                            <span>{{item.price}}</span> 
+                            <div class="item__infoCondition" v-if='anew  = yes'> NEW</div>
+                            <div class="item__infoCondition" v-if='sale = yes'>SALE</div>
+                        </a>
+                    </div>
+                    <div class="pictures__button">
+                            <button class="btn btn-default pictures__buttonView"> ПОКАЗАТИ БІЛЬШЕ </button>  
+                    </div>  
 
+                </div>
+            </div>
+    </div>
             <div id="footer">
                 <afooter></afooter>
             </div>
 
-        </div>
+    
 
  
 

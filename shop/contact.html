@@ -10,19 +10,19 @@
         <title>Khaby_shop</title>  
     </head>
     <body>
+        <div id="alist">
+            <aheader></aheader>
+        </div>
         <div class="container">
-            <div id="alist">
-                <aheader></aheader>
-            </div>
-
-            <div id="footer">
+        </div>
+        <div id="footer">
+            <div class="container">
                 <div class="contact">
                     <div class="contact__title">КОНТАКТИ</div>
                     <div class='contact__info'v-for='item in designer_contact'><a :href="item.url"><img :src="item.image"> {{item.contact}}</a></div>
                 </div>
-                <afooter></afooter>
             </div>
-
+            <afooter></afooter>
         </div>
 
 

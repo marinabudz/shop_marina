@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+        <link rel="stylesheet" href="try.css">
+        <title>Khaby_shop</title>  
+    </head>
+    <body>
+        <div id="alist">
+<nav class="navbar navbar-default ">
+    <div class="navbar-header " >
+        <button type="button" 
+        class="navbar-toggle collapsed " style="float:left;  border: 0px solid black; color:white; padding-right:35%; background-color:black;"
+        data-toggle="collapse"
+        data-target="#collapsemanu"
+        aria-expanded="false"> 
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <button class="btn btn-default hidden-lg" style="background-color: black; border: 0px solid black; float:right; width:10%;" > <img src="communication/white.png"alt="search"/></button>
+        <a href='shop_new.html'><img src="logo/logo-top.png" class="hidden-xs  hidden-sm "></a>
+        <div class='logoMobile'><a href='shop_new.html'><img src="logo/logo-bottom.png" class="hidden-lg"></a></div>
+    </div>
+
+       <div class=''>
+        <div class="collapse navbar-collapse" id="collapsemanu">
+            <ul class="nav navbar-nav">
+                    <li class=""> 
+                        <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="btn" aria-haspopup="true" aria-expanded="false">
+                            КАТАЛОГ 
+                        <span class="caret hidden-xs  hidden-sm"></span>
+                        </a>
+                        <ul class="hidden-xs  hidden-sm " >
+                            <li v-for='item in dropdown_list'><a :href="item.url">{{item.name}}</a></li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <div class="" v-for='element in header_menu'> 
+                            <img src="communication/dot.jpg" alt="dot"class='hidden-xs  hidden-sm'>
+                            <a :href="element.url" class="">{{element.name}}</a> 
+                        </div>
+                    </li>
+                </ul>
+
+                </div>
+                
+            <form class="navbar-form navbar-right hidden-xs  hidden-sm" role="search">
+                <div class="form-group">
+                    <button class="btn btn-default"> <img src="communication/search.png"alt="search"/> Пошук</button>
+                    
+                </div>
+            </form>
+        </div>
+        </div>
+
+</nav>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="shop.js"></script>
+</body>
+</html>

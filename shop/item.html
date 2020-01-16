@@ -12,10 +12,10 @@
         <title>Khaby_shop</title>  
     </head>
     <body>
+        <div id="alist">
+            <aheader></aheader>
+        </div>
         <div class="container">
-            <div id="alist">
-                <aheader></aheader>
-            </div>
             <div class="item">
                 <div id="menu">
                         <amenu></amenu>          
@@ -29,12 +29,14 @@
                         </div>
                     </div>
                     <div class="item__info">
-                        <div class="item__infoName">{{product}}</div>
-                        <div class="item__infoAvailability" v-if='inventory <= 0'>нема в наявності</div>
-                        <div class="item__infoPrice">{{price}}</div>
-                        <div class="item__infoCharacteristics" v-for='detail in details'>
-                            <div class="item__infoTitle">{{detail.name}}</div>
-                            <div class="item__infoDescription">{{detail.description}}</div>
+                        <div class="item__mobile">
+                            <div class="item__infoName">{{product}}</div>
+                            <div class="item__infoAvailability" v-if='inventory <= 0'>нема в наявності</div>
+                            <div class="item__infoPrice">{{price}}</div>
+                            <div class="item__infoCharacteristics" v-for='detail in details'>
+                                <div class="item__infoTitle">{{detail.name}}</div>
+                                <div class="item__infoDescription">{{detail.description}}</div>
+                            </div>
                         </div>
             
                         <div class="btn btn default"> <button class="item__button">ЗАМОВИТИ</button></div>
@@ -43,15 +45,34 @@
                         </div>
 
                     </div>
+                </div>
+            </div>
+            <div class="client-form">
+                <div class="close-form glyphicon glyphicon-remove"> </div>
+                    <p> Для успішного замовлення необхідно <br>залишити номер телефону</p>
+                    <div class="form-group aform">
+                        <div class="input-group ">
+                            <span class="glyphicon glyphicon-earphone input-group-addon " > </span>
+                            <input type="tel" required class="aform__phone form-control" > 
+                        </div>
+                    </div>
+                    <button class="btn btn-default aform__button"> НАДІСЛАТИ</button>
+                    <img src="logo-black.png" alt="logo">
+            </div>
+            <div class="thank-form">
+                <div class="close-form glyphicon glyphicon-remove"> </div>
+                <p> Очікуйте на дзвінок<br>Дякуємо, що обрали Khaby.</p>
+                <div class="thank-form__heart"> <img src="communication/heart.png" alt="heart"/></div>
+                <div class="thank-form__logo"> <img src="logo-black.png" alt="logo"></div>
+
             </div>
         </div>
 
-            <div id="footer">
-                <afooter></afooter>
-        
-            </div>
-        
+        <div id="footer">
+            <afooter></afooter>
         </div>
+        
+       
     
 
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
