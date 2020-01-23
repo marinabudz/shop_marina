@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="shop_new.css">
+        <title>Khaby_shop</title>  
+    </head>
+    <body>
+        <div id="alist">
+            <aheader></aheader>
+        </div>
+        <div class="container">
+            <div class="item">
+                <div id="product">
+                        <amenu></amenu>    
+                        <div class="item__photos">
+                            <div class="item__photosMain"><img :src="item.photo_main"/></div>
+                            <div class="item__photosCollection" v-for='(variant,index) in item.variants'
+                            :key='variant.variantId'
+                            class="image"
+                            @mouseover="updateProduct(index)">
+                                <img :src="variant.variantImageSmall"/>
+                            </div> 
+                        </div>
+                        <div class="item__info">
+                            <div class="item__mobile">
+                                <div> КАТАЛОГ > {{item.category}} > {{item.name}}</div>
+                                <div class="item__infoName">{{item.name}}</div>
+                                <div class="item__infoAvailability" v-if='item.inventory <= 0'>нема в наявності</div>
+                                <div class="item__infoPrice">{{item.price}}</div>
+                                <div class="item__infoCharacteristics">
+                                    <div class="item__infoTitle"> ОПИС:</div>
+                                    <div class="item__infoDescription">{{item.description}}</div>
+                                    <div class="item__infoTitle"> СКЛАД:</div>
+                                    <div class="item__infoDescription">{{item.ingridients}}</div>
+                                    <div class="item__infoTitle"> РОЗМІРИ:</div>
+                                    <div class="item__infoDescription">{{item.size}}</div>
+                                    <div class="item__infoTitle"> ВИРОБНИЦТВО:</div>
+                                    <div class="item__infoDescription">{{item.production}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+                <div class="btn btn default"> <button class="item__button">ЗАМОВИТИ</button></div>
+                <div class="item__infoTitle">Інші кольори
+                    <img src="" alt=""/>
+                </div>
+            </div> 
+                
+
+                    <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+                  
+                    <div class="modal fade" id="myModal" role="dialog">
+                      <div class="modal-dialog">
+                      
+            
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Modal Header</h4>
+                          </div>
+                          <div class="modal-body">
+                            <p>Some text in the modal.</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    
+                  </div>  -->
+
+
+            <div class="client-form">
+                <div class="close-form glyphicon glyphicon-remove"> </div>
+                    <p> Для успішного замовлення необхідно <br>залишити номер телефону</p>
+                    <div class="form-group aform">
+                        <div class="input-group ">
+                            <span class="glyphicon glyphicon-earphone input-group-addon " > </span>
+                            <input type="tel" required class="aform__phone form-control" > 
+                        </div>
+                    </div>
+                    <button class="btn btn-default aform__button"> НАДІСЛАТИ</button>
+                    <img src="logo-black.png" alt="logo">
+            </div>
+            <div class="thank-form">
+                <div class="close-form glyphicon glyphicon-remove"> </div>
+                <p> Очікуйте на дзвінок<br>Дякуємо, що обрали Khaby.</p>
+                <div class="thank-form__heart"> <img src="communication/heart.png" alt="heart"/></div>
+                <div class="thank-form__logo"> <img src="logo-black.png" alt="logo"></div>
+
+            </div>
+        </div>
+
+        <div id="footer">
+            <afooter></afooter>
+        </div>
+        
+       
+    
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="shop.js"></script>
+    </body>
+</html>

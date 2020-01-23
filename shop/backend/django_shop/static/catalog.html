@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="shop_new.css">
+        <title>Khaby_shop</title>  
+    </head>
+    <body>
+        <div id="alist">
+            <aheader></aheader>
+        </div>
+        <div class="container">
+          
+            <div id="product" >
+                <amenu></amenu>
+            </div>
+            <div id="picture">
+                <div class="catalog pictures">
+                    <div v-for='item in images' class="pictures__list">
+                        <a :href='"item.html#"+item.id'>
+                            <span><img :src='item.src'></span>
+                            <img src="communication/heart_empty_white.png" alt="heart" style="position: absolute; top:15px; right:20px; width:20px; height:20px;">
+                            <div class='catalog__new' v-if="item.new_in"> NEW </div>
+                            <div class='catalog__sale' v-if="item.sale"> SALE </div>
+                            <p>{{item.name}}</p>
+                            <span v-bind:class="{catalog__price: item.sale}">{{item.price}}</span> 
+                            <div class= "catalog__newprice" v-if="item.sale"> {{item.new_price}} </div>
+                        </a>
+                    </div>
+                    <div class="pictures__button">
+                            <button class="btn btn-default pictures__buttonView"> ПОКАЗАТИ БІЛЬШЕ </button>  
+                    </div> 
+                </div>
+            </div>
+
+         
+            <div id="load_more" class="catalog__load" >
+                    <div class="catalog pictures">
+                        <div v-for='item in more_images' class="col-lg-6 col-lg-offset-2 col-md-offset-1 col-md-6 col-xs-offset-2 col-xs-6  pictures__list">
+                            <a :href='"item.html#"+item.id'>
+                                <span><img :src='item.src'></span>
+                                <img src="communication/heart_empty_white.png" alt="heart" style="position: absolute; top:15px; right:20px; width:20px; height:20px;">
+                                <div class='catalog__new' v-if="item.new_in"> NEW </div>
+                                <div class='catalog__sale' v-if="item.sale"> SALE </div>
+                                <p>{{item.name}}</p>
+                                <span v-bind:class="{catalog__price: item.sale}">{{item.price}}</span> 
+                                <div v-on:click='' class= "catalog__newprice" v-if="item.sale"> {{item.new_price}} </div>
+                            </a>
+                        </div>
+    
+                    </div>
+                </div>
+
+        </div>
+            <div id="footer">
+                <afooter></afooter>
+            </div>
+
+    
+
+ 
+
+    
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="shop.js"></script>
+    </body>
+</html>

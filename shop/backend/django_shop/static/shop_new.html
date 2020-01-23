@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+        <link rel="stylesheet" href="shop_new.css">
+        <title>Khaby_shop</title>  
+    </head>
+    <body>
+        <div id="alist">
+                <aheader></aheader>
+        </div>
+        <div class="container">
+            <div id="picture" class=" pictures">
+                <div class="pictures__main col-xl-12 col-md-12 col-sm-12"><img src="catalog_page/1.jpg" alt="main-picture"/></div>
+                <div id="picture">
+                    <div v-for='item in images' class="col-lg-4 col-lg-offset-0 col-md-offset-1 col-md-6 col-xs-offset-1 col-xs-11 col-sm-9  col-sm-offset-3 pictures__list">
+                        <a :href='"item.html#"+item.id'>
+                            <span><img :src='item.src'></span>
+                            <img src="communication/heart_empty_white.png" alt="heart" style="position: absolute; top:15px; right:20px; width:20px; height:20px;">
+                            <div class='catalog__new' v-if="item.new_in"> NEW </div>
+                            <div class='catalog__sale' v-if="item.sale"> SALE </div>
+                            <p>{{item.name}}</p>
+                            <span v-bind:class="{catalog__price: item.sale}">{{item.price}}</span> 
+                            <div class= "catalog__newprice" v-if="item.sale"> {{item.new_price}} </div>
+                        </a>
+                    </div>
+                    <div class="pictures__button">
+                        <button class="btn btn-default pictures__buttonView"> ПОКАЗАТИ БІЛЬШЕ </button>  
+                    </div>  
+
+                </div>
+         
+            </div>
+
+            <div class="review">
+                <div class="review__item">
+                    <img src="clients/client1.jpg">
+                    <p class="review__itemUser">Ирина Пахнюк</p>
+                    <p class="review__itemComment">«Добрий вечір,отримала замовлення. Дякую за <br> оперативність. Матеріал,щоправда,не джинс,але <br> модель відповідає зовнішньому вигляду.Розмір теж  <br>підійшов. Дитина в захваті від упакування товару,за це  <br>окреме « Дякую» Будем у вас час від часу робити  <br>замовлення»</p>
+                </div>
+
+                <div class="review__item">
+                    <img src="clients/client2.jpg">
+                    <p class="review__itemUser">Julijaartemchuk</p>
+                    <p class="review__itemComment">«Привіт! Костюм просто нереальний. Коли його <br>одягнула на бранч, тоді розвіялись всі міфи про<br> зручність в такому одязі. Погода була дуже холодна <br>але мені в ньому було тепло і комфортно. Тканина на<br> дотик така, ніби ти немовлятко гладиш, така <br>м’ягесенька) І що саме основне, при сидячому <br>положенні не віддуваються коліна. Думаю для тих <br>кому важливий гарний вигляд, зацінить якість <br>костюма. Тому дуже вдячна, дуже задоволена <br>покупкою і хорошим сервісом»</span></p>
+    
+                </div>
+
+                <div class="review__item">
+                    <img src="clients/client3.jpg">
+                    <p class="review__itemUser">Vitalinaaostapiuk</p>
+                    <p class="review__itemComment">«Доброго дня, отримала сорочку! Якість прекрасна,<br> приємна до тіла, розмір чудово підійшов. Дякую, <br>обов'язково замовлю у вас ще!»</p>
+
+                </div>
+
+                <div class="review__item">
+                    <img src="clients/client4.jpg">
+                    <p class="review__itemUser">Tanianice</p>
+                    <p class="review__itemComment">«Ого, это было быстро 😂 <br>класс! Спасибо вам большое! <br>Платье из льна просто<br> бомбическое! Вы очень<br> молодец!!»</p>
+    
+                </div>
+
+
+                <div class="review__item">
+                    <img src="clients/client5.jpg">
+                    <p class="review__itemUser">Oxanashcheglova</p>
+                    <p class="review__itemComment">«Велике дякую! Все підійшло <br>та дуже сподобалось! Сукня сіла <br>як рідна!»</p>
+
+                </div>
+
+                <div class="review__item">
+                    <img src="clients/client6.jpg">
+                    <p class="review__itemUser">Khrystyna Arkhytka</p>
+                    <p class="review__itemComment">« Іра, сукня просто казкова <br>😍❤️ купую 😌 мені підійшла S. <br>Ти так красиво опакувала 😍. Як <br>завжди краса ❤» </p>
+    
+                </div>
+            </div>
+        </div>
+            <div id="footer">
+                <afooter></afooter>
+            </div>
+  
+
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script type="text/javascript" src="slick/slick.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="shop.js"></script>
+    </body>
+    </html>
