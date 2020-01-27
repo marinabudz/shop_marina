@@ -52,18 +52,18 @@
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">
-                                <p class="modal-title"> Для успішного замовлення необхідно <br>залишити номер телефону</p>
+                                <p class="modal-title text-center modal__p"> Для успішного замовлення необхідно <br>залишити номер телефону</p>
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
                             <div class="modal-body">
-                                <div class="inner-addon left-addon button">
+                                <div class="inner-addon left-addon button" style="width:400px; margin-left: auto; margin-right: auto; margin-top: 40px;">
                                     <span class="glyphicon glyphicon-earphone" style="margin-top:-5px;" aria-hidden="true" ></span>
                                     <input type="tel" required class="aform__phone form-control" > 
                                 </div>
-                                <button class="btn btn-default aform__button"> НАДІСЛАТИ</button>
+                                <div style="width:400px; margin-left: auto; margin-right: auto; margin-top: 40px;"><button class="btn btn-default aform__button" > НАДІСЛАТИ</button></div>
                             </div>
                             <div class="modal-footer">
-                                <img src="logo-black.png" alt="logo">
+                                <img src="logo-black.png"  style="width:100px;  margin-left: auto; margin-right: auto;" alt="logo">
                             </div>
                           </div>
                           
@@ -76,52 +76,27 @@
 
 
             </div> 
-                
-
-                  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-                  
-                    <div class="modal fade" id="myModal" role="dialog">
-                      <div class="modal-dialog">
-                      
-            
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Modal Header</h4>
-                          </div>
-                          <div class="modal-body">
-                            <p>Some text in the modal.</p>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                          </div>
-                        </div>
-                        
-                      </div>
-                    </div>
-
-                  </div> 
-
-
-            <div class="client-form">
-                <div class="close-form glyphicon glyphicon-remove"> </div>
-                    <p> Для успішного замовлення необхідно <br>залишити номер телефону</p>
-                    <div class="form-group aform">
-                        <div class="input-group ">
-                            <span class="glyphicon glyphicon-earphone input-group-addon " > </span>
-                            <input type="tel" required class="aform__phone form-control" > 
-                        </div>
-                    </div>
-                    <button class="btn btn-default aform__button"> НАДІСЛАТИ</button>
-                    <img src="logo-black.png" alt="logo">
-            </div>
             <div class="thank-form">
-                <div class="close-form glyphicon glyphicon-remove"> </div>
-                <p> Очікуйте на дзвінок<br>Дякуємо, що обрали Khaby.</p>
-                <div class="thank-form__heart"> <img src="communication/heart.png" alt="heart"/></div>
-                <div class="thank-form__logo"> <img src="logo-black.png" alt="logo"></div>
+            <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        
+                        <div class="modal-header">
+                            <p> Очікуйте на дзвінок<br>Дякуємо, що обрали Khaby.</p>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="thank-form__heart"> <img src="communication/heart.png" alt="heart"/></div>
+                        </div>
+                        <div class="modal-footer">
+                            <img src="logo-black.png"  style="width:100px;  margin-left: auto; margin-right: auto;" alt="logo">
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
 
-            </div>
+                </div> 
         </div>
 
         <div id="footer">

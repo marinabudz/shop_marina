@@ -680,9 +680,12 @@ body {
   margin-top: 10%; }
   .aform__phone {
     width: 400px;
-    height: 50px; }
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px; }
   .aform__button {
-    width: 80%;
+    width: 400px;
     margin-right: auto;
     margin-left: auto;
     background-color: black;
@@ -736,3 +739,6 @@ body {
 .lookbook__p {
   margin-top: 2%;
   font-size: 18px; }
+
+.modal__p {
+  margin-left: 110px; }

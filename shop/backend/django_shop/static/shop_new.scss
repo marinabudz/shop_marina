@@ -808,13 +808,17 @@ margin-bottom: 30px;}
     margin-right: auto;
     margin-left: auto;
     margin-top:10%;
+    
     &__phone{
         width:400px;
-        height: 50px;
+        height: 40px;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom: 40px;
 
     }
     &__button{
-        width:80%;
+        width:400px;
         margin-right: auto;
         margin-left: auto;
         background-color: black;
@@ -884,4 +888,11 @@ margin-bottom: 30px;}
     margin-top:2%;
     font-size: 18px;
 
+}
+
+.modal{
+    &__p{
+        margin-left:110px;
+
+    }
 }
