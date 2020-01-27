@@ -7,7 +7,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
-        
         <link rel="stylesheet" href="shop_new.css">
         <title>Khaby_shop</title>  
     </head>
@@ -48,14 +47,38 @@
                         </div>
                     
                 </div>
-                <div class="btn btn default"> <button class="item__button">ЗАМОВИТИ</button></div>
-                <div class="item__infoTitle">Інші кольори
-                    <img src="" alt=""/>
-                </div>
+                <div class="btn btn default"> <button class="item__button btn btn-info" type="button" data-toggle="modal" data-target="#myModal">ЗАМОВИТИ</button></div>
+                <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                                <p class="modal-title"> Для успішного замовлення необхідно <br>залишити номер телефону</p>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="inner-addon left-addon button">
+                                    <span class="glyphicon glyphicon-earphone" style="margin-top:-5px;" aria-hidden="true" ></span>
+                                    <input type="tel" required class="aform__phone form-control" > 
+                                </div>
+                                <button class="btn btn-default aform__button"> НАДІСЛАТИ</button>
+                            </div>
+                            <div class="modal-footer">
+                                <img src="logo-black.png" alt="logo">
+                            </div>
+                          </div>
+                          
+                        </div>
+                      </div>
+  
+                    </div> 
+  
+  
+
+
             </div> 
                 
 
-                    <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+                  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
                   
                     <div class="modal fade" id="myModal" role="dialog">
                       <div class="modal-dialog">
@@ -76,8 +99,8 @@
                         
                       </div>
                     </div>
-                    
-                  </div>  -->
+
+                  </div> 
 
 
             <div class="client-form">

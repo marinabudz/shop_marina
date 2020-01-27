@@ -24,6 +24,14 @@ padding-right: 125px;
         padding-left:0px;
         padding-right: 0px;
       }
+    &__dropdown{
+        padding-left:5px;
+        border: 1px solid gray;
+        background-color: white;
+        padding-top:5px;
+        padding-bottom: 5px;
+        font-size: 10px;
+    }
     &__logo{
         @media screen and(max-width:$container_widthMD){
             width:15%;
@@ -85,9 +93,10 @@ padding-right: 125px;
         }
         
 }
-.buttonSmall{ display: none;
+.buttonSmall img{ display: none;
     @media screen and(max-width: $container_widthMD){
-        background-color: black; border: 0px ; padding-right:40px; width:10%;
+        display: block;
+        border: 0px ; padding-right:20px; width:40px; height: 20px;
     }
 }
 .inner-addon { 
@@ -120,7 +129,7 @@ padding-right: 125px;
         color:black; 
         border: 1px solid white; 
         background-color: white; 
-        top: 515px;right: 16px; 
+        top: 425px;right: 10px; 
         font-style: normal;
         font-weight: normal;
         font-size: 12px;
@@ -136,7 +145,7 @@ padding-right: 125px;
         color:white; 
         border: 1px solid black; 
         background-color: black; 
-        top: 415px;right: 16px; 
+        top: 425px;right: 10px; 
         font-style: normal;
         font-weight: normal;
         font-size: 12px;
@@ -160,12 +169,42 @@ padding-right: 125px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    box-sizing: border-box;
 
     @media screen and(max-width: $container_width){
         padding-left:0;
         width:100%;
     }
-  
+    &__new{
+        position:absolute; 
+        color:black; 
+        border: 1px solid white; 
+        background-color: white; 
+        top: 465px;right: 10px; 
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+    }
+    &__newprice{
+        color:#C5221E;
+        font-weight:bold;
+        font-size: 24px;
+ 
+    }
+    &__sale{
+        position:absolute; 
+        color:white; 
+        border: 1px solid black; 
+        background-color: black; 
+        top: 465px;right: 10px; 
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+    }
+
+    &__price{
+        text-decoration: line-through;
+    } 
     &__main{
         width:76%;
         height: auto;
@@ -189,10 +228,10 @@ padding-right: 125px;
     &__list{
         text-align:center;
         box-sizing: border-box;
-        position: relative;
         margin-bottom: 50px;
         height:600px;
         width: 350px;
+
    
         @media screen and(max-width: $container_width){
             // width:80%;
@@ -408,10 +447,9 @@ height: 178px;
     display:flex;
     flex-direction: row;
     margin-bottom: 70px;
-    @media screen and(max-width: $container_width){
+    @media screen and(max-width: $container_widthMD){
         display: block;
-        margin-top: -4%;
-        position: relative;
+        // position: relative;
  
 
     }  
@@ -459,23 +497,22 @@ height: 178px;
     &__infoDescription{
         font-size: 16px;
         line-height: 150%;
-        @media screen and(max-width: $container_width){
+        @media screen and(max-width: $container_widthMD){
             width:90%;
             margin-left: auto;
             margin-right: auto;
             font-size: 22px;
         }
     }
-    &__infoDescriptionItalic{
-        font-style: italic; 
-        font-size: 24px;
-        padding-top:20px;
-        padding-bottom: 20px;
-        @media screen and(max-width: $container_width){
+    &__infoDescriptionItalicMobile{
+        @media screen and(max-width: $container_widthMD){
+            font-size: 24px;
+            padding-top:20px;
+            padding-bottom: 20px;
             position: absolute;
             background-color: black;
             opacity: 0.7;
-            top: 45.5%;
+            bottom:0;
             left:0px;
             width:100%;
             color:white;
@@ -484,8 +521,12 @@ height: 178px;
             line-height: 35px;
             padding-bottom: 0px;
             font-size: 18px;
-        
-        }  
+        } }; 
+    &__infoDescriptionItalic{
+        font-style: italic; 
+        font-size: 24px;
+        padding-top:20px;
+        padding-bottom: 20px;
 
     }
 }

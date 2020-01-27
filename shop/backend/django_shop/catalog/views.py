@@ -80,7 +80,7 @@ def products(request):
 def products_more(request, from_number, count):
     items = Item.objects.all()
     all=[]
-    for item in items[(from_number-1):(from_number-1)+count]:
+    for item in items[(int(from_number)-1):(int(from_number)-1)+int(count)]:
         alist={
             'category': item.category.name,
             'id': item.id,
