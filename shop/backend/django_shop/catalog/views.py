@@ -13,12 +13,10 @@ def categories(request):
     for item in categories:
         alist={
             "name": item.name,
-            "id": item.id,
+            "id": item.id
         }
         all_categories.append(alist)
     return JsonResponse(all_categories, safe=False)
-
-
 
 # кожна окрема категорія 
 def category(request, categ_id):
@@ -31,8 +29,15 @@ def category(request, categ_id):
 
 # продукти по категорії
 def product_by_category(request, category_id):
-    acategory = Categories.objects.get(id=category_id)
-    items = Item.objects.filter(category=acategory)
+    start_count = 10
+    try:
+        cid = int(category_id)
+        category = Categories.objects.get( id = cid )
+        items = Item.objects.filter(category=category)[:start_count]
+    except:
+        items = []
+    if category_id == 'all':
+        items = Item.objects.all()[:start_count]
     items_in_category=[]
     for item in items:
         alist={
@@ -69,11 +74,13 @@ def products(request):
 
 
 
+
 # підгрузити більше продуктів
+
 def products_more(request, from_number, count):
-    load_products = Item.objects.order_by('id')
-    more_products=[]
-    for item in load_products:
+    items = Item.objects.all()
+    all=[]
+    for item in items[(from_number-1):(from_number-1)+count]:
         alist={
             'category': item.category.name,
             'id': item.id,
@@ -84,8 +91,27 @@ def products_more(request, from_number, count):
             "price": item.price,
             "name": item.name,
             "url_item": item.url_item}
-        more_products.append(alist)
-    return JsonResponse(more_products[10:20], safe=False)
+        all.append(alist)
+    return JsonResponse(all, safe=False)
+
+
+# підгрузити більше продуктів
+# def products_more(request, from_number, count):
+#     load_products = Item.objects.order_by('id')
+#     more_products=[]
+#     for item in load_products:
+#         alist={
+#             'category': item.category.name,
+#             'id': item.id,
+#             'new_price': item.new_price,
+#             'src': item.photo_main.url,
+#             'sale': item.sale,
+#             "new_in": item.new_in,
+#             "price": item.price,
+#             "name": item.name,
+#             "url_item": item.url_item}
+#         more_products.append(alist)
+#     return JsonResponse(more_products[10:20], safe=False)
 
 
 # кожен окремий продукт

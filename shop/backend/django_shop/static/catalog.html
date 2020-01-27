@@ -5,7 +5,8 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
         <link rel="stylesheet" href="shop_new.css">
         <title>Khaby_shop</title>  
     </head>
@@ -19,22 +20,7 @@
                 <amenu></amenu>
             </div>
             <div id="picture">
-                <div class="catalog pictures">
-                    <div v-for='item in images' class="pictures__list">
-                        <a :href='"item.html#"+item.id'>
-                            <span><img :src='item.src'></span>
-                            <img src="communication/heart_empty_white.png" alt="heart" style="position: absolute; top:15px; right:20px; width:20px; height:20px;">
-                            <div class='catalog__new' v-if="item.new_in"> NEW </div>
-                            <div class='catalog__sale' v-if="item.sale"> SALE </div>
-                            <p>{{item.name}}</p>
-                            <span v-bind:class="{catalog__price: item.sale}">{{item.price}}</span> 
-                            <div class= "catalog__newprice" v-if="item.sale"> {{item.new_price}} </div>
-                        </a>
-                    </div>
-                    <div class="pictures__button">
-                            <button class="btn btn-default pictures__buttonView"> ПОКАЗАТИ БІЛЬШЕ </button>  
-                    </div> 
-                </div>
+                <catalog></catalog>
             </div>
 
          

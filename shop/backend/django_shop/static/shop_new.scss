@@ -2,72 +2,62 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
 $black: #000000;
 $container_width: 1140px;
-$container_widthMD: 970px;
+$container_widthMD: 940px;
 $lato: 'Lato', sans-serif;
 body{
 
     font-family: $lato;
 }
-.color{
-    background-color: white;
-    border-bottom: 0px;
+.aheader{
+    @media screen and(max-width: $container_widthMD){
+        background-color: #808080;
+    }
+
 }
 .header{
- 
-    margin-top: 3.8%;
-    @media screen and(max-width: $container_width){
+
+padding-left:110px;
+padding-right: 125px;
+    @media screen and(max-width: $container_widthMD){
         background-color: $black;
-        margin-top: 0px;
-
-  
-      }
-  
-
-}
-.navbar-toggle{
-    @media screen and(max-width: $container_width){
-        display: block;
- 
-       }
-}
-.navbar-header{
-    @media screen and(max-width: $container_width){
-       float: none;
-
-      }
-}
-.aheader{
-    margin-top: 20px;
-    @media screen and(max-width: $container_width){
-        background-color: $black;
-        margin-top: 0px;
         padding-top: 12px;
-
+        padding-left:0px;
+        padding-right: 0px;
       }
-    &__small{
-        @media screen and(max-width: $container_width){
-            background-color: #BFBFBF;
-    
+    &__logo{
+        @media screen and(max-width:$container_widthMD){
+            width:15%;
+            height:70px;
+            margin-right: auto;
+            margin-left: auto;
+            
           }
-        }
+    }
 
     &__items{
-        display:inline;
-        margin-right:5px;
-        font-size: 16px;
+        font-size: 13px;
         color: $black;
-        @media screen and(max-width: $container_width){
-            display: flex;
-            flex-direction: column;
-            background-color: white;
-            padding-left:1.7%;
-            width:70%;
-            margin-bottom:6%;
-            border-radius: 2px;
-            height: 80px
-         
-       
-        }
+        @media screen and(max-width:$container_widthMD){
+           
+            width:80%;
+          
+            
+            
+          }
+    }
+    &__item{
+        @media screen and(max-width:$container_widthMD){
+            margin-bottom: 10px;
+             background-color: white;
+            padding-left: 20px;
+            list-style-type: none;
+            padding-top: 6%;
+            padding-bottom: 6%;
+            
+            
+            
+          }
+    
     }
     &__items a{
         color: black;
@@ -76,45 +66,55 @@ body{
         }
     }
     &__items img{
-     padding-right:10px;
-     padding-left:10px;
+     padding-right:5px;
+     padding-left:5px;
     }
-    &__logo{
-        padding-right: 10px;
-    }
+
 }
 
-.logoMobile{
-    width:42%;
-    height:45%;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.down{
-    padding-top:13px;
-    @media screen and(max-width: $container_width){
-        padding-top:0px;
-     }
-    
-}
 
 .button{
-    margin-top: -130px;
-    margin-right:50px;
-        width:140px;
+        width:120px;
         height:33px;
         text-align: left;
         font-size: 12px;
         color: #333333;
-        background-color: #E5E5E5;
+        border: 0px;
+        @media screen and(max-width: $container_widthMD){
+            display: none;
+        }
+        
 }
-.size{
-    height:200px;
-    width:200px;
+.buttonSmall{ display: none;
+    @media screen and(max-width: $container_widthMD){
+        background-color: black; border: 0px ; padding-right:40px; width:10%;
+    }
 }
-.catalog{
+.inner-addon { 
+    position: relative; 
+}
 
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+.catalog{
+    width:90%; margin-right: auto;margin-left: auto;
+    @media screen and(max-width:$container_widthMD){
+        width:70%;
+        margin-right: auto;margin-left: auto;
+    }
     &__new{
         position:absolute; 
         color:black; 
@@ -136,7 +136,7 @@ body{
         color:white; 
         border: 1px solid black; 
         background-color: black; 
-        top: 515px;right: 16px; 
+        top: 415px;right: 16px; 
         font-style: normal;
         font-weight: normal;
         font-size: 12px;
@@ -163,28 +163,43 @@ body{
 
     @media screen and(max-width: $container_width){
         padding-left:0;
+        width:100%;
     }
   
     &__main{
-        width:98%;
+        width:76%;
         height: auto;
         overflow: hidden;
-        margin-bottom: 30px;}
+        margin-bottom: 30px;
+        margin-right: auto;
+        margin-left: auto;
+        @media screen and(max-width: $container_width){
+            width:100%;
+            padding-left:0px;
+            padding-right:0px;
+        }
+    }
 
     &__main img{
         width:100%;
         height: auto;
         @media screen and(max-width: $container_width){
             width:100%;
- 
         }}
     &__list{
         text-align:center;
-        margin-bottom: 200px;
+        box-sizing: border-box;
+        position: relative;
+        margin-bottom: 50px;
         height:600px;
-        width: 450px;
-        padding-right:30px;
-
+        width: 350px;
+   
+        @media screen and(max-width: $container_width){
+            // width:80%;
+            // margin-right: auto;
+            // margin-left: auto;
+            // padding-right:0px;
+        }
    
 
     }
@@ -210,6 +225,7 @@ body{
         line-height: 19px;
         background-color: #000000;
         color: #FFFFFF;
+        margin-bottom: 90px;
         
     
     }

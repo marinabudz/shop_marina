@@ -51,71 +51,51 @@ var footer = new Vue({
 Vue.component('aheader',{
     
     template: `
-  
-<nav class="navbar navbar-default color">
-    <div class='container'>
-    <div class="navbar-header aheader" >
-        <button type="button" 
-        class="navbar-toggle collapsed " style="float:left;  border: 0px solid black; color:white; padding-right:35%; background-color:black; margin-top:-0.1px;"
-        data-toggle="collapse"
-        data-target="#collapsemanu"
-        aria-expanded="false"> 
-            <span ></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <button class="btn btn-default hidden-lg" style="background-color: black; border: 0px ; float:right; width:10%;" > <img src="communication/white.png"alt="search"/></button>
-        <a href='shop_new.html'><img src="logo/logo-top.png" class="aheader__logo hidden-xs  hidden-sm "></a>
-        <div class='logoMobile'><a href='shop_new.html'><img src="logo/logo-bottom.png" class="hidden-lg logoMobile"></a></div>
-        <a href=""><img src='communication/red_heart.png' class =" hidden-md  hidden-lg hidden-xl" style ="margin-left: 80%; margin-top:-14%;"/> </a>
-    </div>
-       <div class='header'>
-        <div class="collapse navbar-collapse" id="collapsemanu" style="border:0px;">
-            <ul class="nav navbar-nav aheader__small">
-                <li> 
-                    <div class="aheader__items" style='color:gray; padding-left:20px;'>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="btn" aria-haspopup="true" aria-expanded="false">
-                        КАТАЛОГ 
-                        <span class="caret hidden-xs  hidden-sm"></span>
-                        </a>
-                   
-                        <ul class="dropdown-menu hidden-xs  hidden-sm hidden-md">
-                            <li v-for='item in dropdown_list'><a :href="item.url">{{item.name}}</a></li>
-                        </ul>
-                        </div>
-                </li>
-                <li>
-                    <div class="aheader__items" v-for='element in header_menu'> 
-                        <img src="communication/dot.jpg" alt="dot" class='hidden-xs  hidden-sm'>
-                        <a :href="element.url">{{element.name}}</a> 
+    <nav class="navbar navbar-expand-lg navbar-dark  header ">
+    <div class="container">
+        <!-- кнопка схованого меню -->
+        <button type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" style="padding-left:20px; border:0px;"><span class="navbar-toggler-icon"></span></button>
+        <!-- LOGO -->
+        <a href='shop_new.html' class="header__logo">
+            <img src="logo/logo-top.png" class="navbar-brand">
+        </a>
+        <!-- меню -->
+        <div class="collapse navbar-collapse " id="navbarNav">
+        <!--  дропдавн-->
+            <!-- список ссиллок по сторінці  -->
+            <ul class="navbar-nav header__items list-unstyled">
+                <li class="nav-item  ml-2 ml-1 dropdown header__item" >
+                <a href="catalog.html?id=all" role="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle " style="color:gray">Каталог </a> 
+                <div class="dropdown-menu">
+                        <li>
+                            <a href="catalog.html?id=all">ВСЕ</a>
+                        </li>
+                        <li v-for='item in dropdown_list' >
+                            <a :href='"catalog.html?id="+item.id+"#"+item.id'>{{item.name}}</a>
+                        </li>
                     </div>
+                    
+                    
+                </li>
+                <li class="nav-item list-unstyled ml-2 ml-1 header__item" v-for='element in header_menu'> 
+                    <img src="communication/dot.jpg" alt="dot" >
+                    <a :href="element.url">{{element.name}}</a> 
                 </li>
             </ul>
-
-            </div>
-            <a href=""><img src='communication/red_heart.png' class ="hidden-sm hidden-xs" style ="margin-left: 75%; margin-top:-10%;"/> </a>
-            <form class="navbar-form navbar-right hidden-xs  hidden-sm hidden-md" role="search">
-                <div class="input-group button">
-                        <input 
-                            type="text" class="form-control" 
-                            placeholder="Пошук" aria-label="Пошук" 
-                            aria-describedby="basic-addon2"
-                            v-model="searchtext"
-                            v-on:keyup.enter="search"
-                            >
-                        <div class="input-group-append">
-                            <span class="input-group-text button" id="basic-addon2" v-on:click="search">
-                                <img src="communication/search.png"alt="search"/>
-                            </span>
-                        </div>
-                </div>     
-            </form>
-    
         </div>
+        <div class="inner-addon left-addon button">
+            <span class="glyphicon glyphicon-search " aria-hidden="true" ></span>
+            <input type="text" class="form-control"
+            placeholder="Пошук" aria-label="Пошук" 
+            aria-describedby="basic-addon2"
+            v-model="searchtext"
+            v-on:keyup.enter="search"/>
         </div>
-        </div>
-</nav>`, 
+        <button class="btn btn-default buttonSmall" > 
+            <img src="communication/white.png"alt="search"/>
+        </button>
+    </nav>
+`, 
         data: function(){
             return{
             searchtext:'',
@@ -147,11 +127,11 @@ var alist = new Vue({
 
 Vue.component('catalog',{
     template: `
-    <div class="pictures">
-        <div v-for='item in images'>
+<div>
+    <div class=" pictures">
+        <div v-for='item in images' class="pictures__list" style="padding-left:20px;">
             <a :href='"item.html#"+item.id'>
                 <span><img :src='item.src'></span>
-                <img src="communication/heart_empty_white.png" alt="heart" style="position: absolute; top:15px; right:20px; width:20px; height:20px;">
                 <div class='catalog__new' v-if="item.new_in"> NEW </div>
                 <div class='catalog__sale' v-if="item.sale"> SALE </div>
                 <p>{{item.name}}</p>
@@ -159,14 +139,27 @@ Vue.component('catalog',{
                 <div class= "catalog__newprice" v-if="item.sale"> {{item.new_price}} </div>
             </a>
         </div>
-        <div class="pictures__button">
-                <button class="btn btn-default pictures__buttonView"> ПОКАЗАТИ БІЛЬШЕ </button>  
-        </div>  
-    </div>`,
+    </div>
+    <div class="pictures__button">
+        <button v-on:click="getFiles" class="btn btn-default pictures__buttonView"> ПОКАЗАТИ БІЛЬШЕ </button>  
+    </div> 
+</div> 
+`,
     data: function(){
         return{
-            images: [
-                ]}},
+            images: [],
+            files:[],
+            loading: false
+        }},
+
+    methods: {
+        getFiles: function(){
+            this.loading = true;
+            axios
+            .get('/catalog/products/9/20')
+                .then((response) => {this.loading =false; this.files = response.data})
+        }},
+
     mounted() {
         axios
             .get('/catalog/products/')
@@ -294,9 +287,9 @@ $('.aform__button').on('click', function () {
 })
 
 // загрузизити більше фото
-$('.pictures__buttonView').on('click', function(){
-        $('#load_more').show();
-    });
+// $('.pictures__buttonView').on('click', function(){
+//         $('#load_more').show();
+//     });
     
 
 
@@ -336,8 +329,7 @@ $('.video').slick(
         { dots: false,
             arrows:false,
             infinite: true,
-            autoplay: true,
-            autoplaySpeed: 3000,
+            autoplay: false,
             slidesToShow: 1,
             slidesToScroll: 1,
             centerMode: true,
@@ -367,8 +359,7 @@ $('.videoXS').slick(
         { dots: false,
             arrows:true,
             infinite: true,
-            autoplay: true,
-            autoplaySpeed:3000,
+            autoplay: false,
             slidesToShow: 3,
             slidesToScroll: 1,
             centerMode: true,
