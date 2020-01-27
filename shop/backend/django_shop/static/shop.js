@@ -79,7 +79,7 @@ Vue.component('aheader',{
                 </li>
                 <li class="nav-item list-unstyled ml-2 ml-1 header__item" v-for='element in header_menu'> 
                     <img src="communication/dot.jpg" alt="dot" >
-                    <a :href="element.url">{{element.name}}</a> 
+                    <a :href="element.url" class="d-none d-lg-inline">{{element.name}}</a> 
                 </li>
             </ul>
         </div>
