@@ -16,30 +16,31 @@
         <div id="alist">
                 <aheader></aheader>
         </div>
-
-            <div id="picture">
-                <div class="pictures__main "><img src="catalog_page/1.jpg" alt="main-picture"/></div>
-                    <div class="container">
-                        <div class="row catalog">
-                            <section v-for='item in images' class="pictures__list col-xl-4 col-lg-4 col-md-6 col-sm-6 col-sm-offset-0 col-xs-6 col-xs-offset-6" style="float:left;">
-                                <a :href='"item.html#"+item.id'>
-                                    <div style=' position:relative'>
-                                        <span><img :src='item.src'></span>
-                                        <!-- <img src="communication/heart_empty_white.png" alt="heart" style="position: absolute; top:15px; right:20px; width:20px; height:20px;"> -->
-                                        <div class='catalog__new' v-if="item.new_in"> NEW </div>
-                                        <div class='catalog__sale' v-if="item.sale"> SALE </div>
-                                        <p>{{item.name}}</p>
-                                        <span v-bind:class="{catalog__price: item.sale}">{{item.price}}</span> 
-                                        <div class= "catalog__newprice" v-if="item.sale"> {{item.new_price}} </div>
-                                    </div>
-                                </a>
-                            </section>
-                            <div class="pictures__button">
-                                    <button class="btn btn-default pictures__buttonView"> ПОКАЗАТИ БІЛЬШЕ </button>  
-                            </div> 
-                        </div>
-                    </div>
+        <div id="main_page">
+            <div class="pictures__main "><img src="catalog_page/1.jpg" alt="main-picture"/></div>
+            <div class="container">
+                <div class="row catalog">
+                    <section v-for='item in products' class="pictures__list col-xl-4 col-lg-4 col-md-6 col-sm-6 col-sm-offset-0 col-xs-6 col-xs-offset-6" style="float:left;">
+                        <a :href='"item.html#"+item.id'>
+                            <div>
+                                <div style='position:relative'>
+                                    <img :src='item.src'>
+                                    <div class='catalog__new' v-if="item.new_in"> NEW </div>
+                                    <div class='catalog__sale' v-if="item.sale"> SALE </div>
+                                </div>
+                                <p>{{item.name}}</p>
+                                <span v-bind:class="{catalog__price: item.sale}">{{item.price}}</span> 
+                                <div class= "catalog__newprice" v-if="item.sale"> {{item.new_price}} </div>
+                            </div>
+                        </a>
+                    </section>
+                    <div class="pictures__button">
+                        <button class="btn btn-default pictures__buttonView"> ПОКАЗАТИ БІЛЬШЕ </button>  
+                    </div> 
+                </div>
             </div>
+        </div>
+        </div>
             <div class="review">
                 <div class="review__item">
                     <img src="clients/client1.jpg">

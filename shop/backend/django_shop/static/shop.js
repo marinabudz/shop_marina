@@ -1,15 +1,15 @@
 function getIdFromUrl() {
-	var hash = location.hash;
-	if (hash) {
-		return hash.substring(1);
-	}
-	return undefined;
+    var hash = location.hash;
+    if (hash) {
+        return hash.substring(1);
+    }
+    return undefined;
 }
 
 
 
 // footer
-Vue.component('afooter',{
+Vue.component('afooter', {
     template: `
     <div class='afooter'>
         <div class="footer">
@@ -29,27 +29,75 @@ Vue.component('afooter',{
 
     </div>
 `,
-    data: function(){
+    data: function () {
         return {
-        footer_links: [{'url':'catalog.html','name':'КАТАЛОГ'},{'url':'about.html','name':'ПРО НАС'},{'url':'lookbook.html','name':'LOOKBOOK'},{'url':'delivery.html','name':'ОПЛАТА ТА ДОСТАВКА'}],
-        designer_contact:[{'url':'#','image' :'communication/message.png', 'contact': 'khaby@gmail.com'}, {'url':'#','image' :'communication/phone.png', 'contact': '+38012345678'}],
-        designer_social:[{'url':'#','image' :'communication/instagram.png'}, {'url':'#','image' :'communication/facebook.png'}],
-        developers_contact: [{'url':'https://www.behance.net/yul6_okb501','name': 'ДИЗАЙН САЙТУ:'},{'url':'https://www.linkedin.com/in/marynabudz-298b5b138/','name': 'РОЗРОБКА САЙТУ:'}]
-    
+            footer_links: [{
+                'url': 'catalog.html',
+                'name': 'КАТАЛОГ'
+            }, {
+                'url': 'about.html',
+                'name': 'ПРО НАС'
+            }, {
+                'url': 'lookbook.html',
+                'name': 'LOOKBOOK'
+            }, {
+                'url': 'delivery.html',
+                'name': 'ОПЛАТА ТА ДОСТАВКА'
+            }],
+            designer_contact: [{
+                'url': '#',
+                'image': 'communication/message.png',
+                'contact': 'khaby@gmail.com'
+            }, {
+                'url': '#',
+                'image': 'communication/phone.png',
+                'contact': '+38012345678'
+            }],
+            designer_social: [{
+                'url': 'https://www.instagram.com/khaby_/',
+                'image': 'communication/instagram.png'
+            }, {
+                'url': 'https://www.facebook.com/khabybase/?epa=SEARCH_BOX',
+                'image': 'communication/facebook.png'
+            }],
+            developers_contact: [{
+                'url': 'https://www.behance.net/yul6_okb501',
+                'name': 'ДИЗАЙН САЙТУ:'
+            }, {
+                'url': 'https://www.linkedin.com/in/marynabudz-298b5b138/',
+                'name': 'РОЗРОБКА САЙТУ:'
+            }]
+
         }
     }
 
 })
 var footer = new Vue({
-    el:'#footer',
-    data:{
-        designer_contact:[{'url':'#','image' :'communication/message.jpg', 'contact': 'itatarchuk90@gmail.com'}, {'url':'#','image' :'communication/phone.jpg', 'contact': '+38 096 620 2081'}, {'url':'#','image' :'communication/facebook.jpg','contact': 'www.facebook.com/khabybase/'}, {'url':'#','image' :'communication/insta.jpg','contact':'www.instagram.com/khaby_/?hl=en'}]
-       }   
+    el: '#footer',
+    data: {
+        designer_contact: [{
+            'url': '#',
+            'image': 'communication/message.jpg',
+            'contact': 'itatarchuk90@gmail.com'
+        }, {
+            'url': '#',
+            'image': 'communication/phone.jpg',
+            'contact': '+38 096 620 2081'
+        }, {
+            'url': 'https://www.facebook.com/khabybase/?epa=SEARCH_BOX',
+            'image': 'communication/facebook.jpg',
+            'contact': 'https://www.facebook.com/khabybase/'
+        }, {
+            'url': 'https://www.instagram.com/khaby_/',
+            'image': 'communication/insta.jpg',
+            'contact': 'www.instagram.com/khaby_/'
+        }]
+    }
 })
 
 
-Vue.component('aheader',{
-    
+Vue.component('aheader', {
+
     template: `
     <nav class="navbar navbar-expand-lg navbar-dark  header ">
     <div class="container">
@@ -67,24 +115,21 @@ Vue.component('aheader',{
                 <li class="nav-item  ml-2 ml-1 dropdown header__item" >
                 <a href="catalog.html?id=all" role="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle " style="color:gray">Каталог </a> 
                 <div class="dropdown-menu">
-                        <li class="header__dropdown">
-                            <a href="catalog.html?id=all">ВСЕ</a>
-                        </li>
-                        <li v-for='item in dropdown_list' class="header__dropdown">
-                            <a :href='"catalog.html?id="+item.id+"#"+item.id'>{{item.name}}</a>
-                        </li>
-                    </div>
+                    <li v-for='item in dropdown_list' class="header__dropdown">
+                        <a :href='"catalog.html?id="+item.id+"#"+item.id'>{{item.name}}</a>
+                    </li>
+                </div>
                     
                     
                 </li>
                 <li class="nav-item list-unstyled ml-2 ml-1 header__item" v-for='element in header_menu'> 
-                    <img src="communication/dot.jpg" alt="dot" >
-                    <a :href="element.url" class="d-none d-lg-inline">{{element.name}}</a> 
+                    <img src="communication/dot.jpg"   class="d-none d-lg-inline"alt="dot" >
+                    <a :href="element.url">{{element.name}}</a> 
                 </li>
             </ul>
         </div>
         <div class="inner-addon left-addon button">
-            <span class="glyphicon glyphicon-search " aria-hidden="true" style="padding-top:-5;"></span>
+            <span class="glyphicon glyphicon-search " aria-hidden="true" style="margin-top:-5px;"></span>
             <input type="text" class="form-control"
             placeholder="Пошук" aria-label="Пошук" 
             aria-describedby="basic-addon2"
@@ -94,42 +139,69 @@ Vue.component('aheader',{
         <button class="btn btn-default buttonSmall" > 
             <img src="communication/white.png"alt="search"/>
         </button>
+        </div>
     </nav>
-`, 
-        data: function(){
-            return{
-            searchtext:'',
+`,
+    data: function () {
+        return {
+            searchtext: '',
             dropdown_list: [],
-            header_menu: [{'url':'about.html','name':'ПРО НАС'},{'url':'delivery.html','name':'ОПЛАТА ТА ДОСТАВКА'},{'url':'lookbook.html','name':'LOOKBOOK'},{'url':'contact.html','name':'КОНТАКТИ'}]
-            }},
+            header_menu: [{
+                'url': 'about.html',
+                'name': 'ПРО НАС'
+            }, {
+                'url': 'delivery.html',
+                'name': 'ОПЛАТА ТА ДОСТАВКА'
+            }, {
+                'url': 'lookbook.html',
+                'name': 'LOOKBOOK'
+            }, {
+                'url': 'contact.html',
+                'name': 'КОНТАКТИ'
+            }]
+        }
+    },
 
-        methods:{
-            search: function() {
-                window.location.href = SITE_URL + "search/"+ this.searchtext;
-            }
-            },
-        
-        
-        mounted(){
-            axios
-                .get('/catalog/categories/')
-                    .then(response => (this.dropdown_list = response.data));
-            }
-        })
+    methods: {
+        search: function () {
+            window.location.href = SITE_URL + "search/" + this.searchtext;
+        }
+    },
+
+
+    mounted() {
+        axios
+            .get('/catalog/categories/')
+            .then(response => (this.dropdown_list = response.data));
+    }
+})
 
 var alist = new Vue({
-    el:'#alist',
-        data:{
-            
+    el: '#alist',
+    data: {
+
+    }
+})
+// main page
+var main_page = new Vue({
+    el: '#main_page',
+    data: {
+        products: []
+    },
+    mounted() {
+        axios
+            .get('/catalog/products/')
+            .then(response => (this.products = response.data));
     }
 })
 
 
-Vue.component('catalog',{
+
+Vue.component('catalog', {
     template: `
-<div >
-    <div class=" pictures">
-        <div v-for='item in images' class="pictures__list" style="padding-left:20px;">
+<div>
+    <div class="pictures">
+        <div v-for='item in images' class="pictures__list">
             <a :href='"item.html#"+item.id'>
             <div style=' position:relative'>
                 <span><img :src='item.src'></span>
@@ -146,13 +218,15 @@ Vue.component('catalog',{
         <button v-on:click="getFiles" class="btn btn-default pictures__buttonView"> ПОКАЗАТИ БІЛЬШЕ </button>  
     </div> 
 </div> 
+</div>
 `,
-    data: function(){
-        return{
+    data: function () {
+        return {
             images: [],
             // files:[],
             // loading: false
-        }},
+        }
+    },
 
     // methods: {
     //     getFiles: function(){
@@ -164,216 +238,181 @@ Vue.component('catalog',{
 
     mounted() {
         axios
-            .get('/catalog/products/')
-                .then(response => (this.images = response.data));
-            }
+            .get('/catalog/products/bycategory/' + getIdFromUrl())
+            .then(response => (this.images = response.data));
+
+
+    }
 })
 
 // всі продукти 
-var picture =new Vue({
-    el:'#picture',
-    data:{
-        images: []},
-	mounted() {
-        axios
-            .get('/catalog/products/')
-                .then(response => (this.images = response.data));
-        },
-        
-    
-});
-// загрузити більше продуктів
-var load_more =new Vue({
-    el:'#load_more',
-    data:{
-        more_images: []
+var picture = new Vue({
+    el: '#picture',
+    data: {
+        images: []
     },
     mounted() {
         axios
-            .get('/catalog/products/9/10')
-                .then(response => (this.more_images = response.data));
-        },
-})
-
-// кожна категорія
-var category = new Vue({
-    el:'#category',
-    data:{
-        category:{}
+            .get('/catalog/products/')
+            .then(response => (this.images = response.data));
     },
-    mounted(){
-        axios
-            .get('/catalog/category/' + getIdFromUrl())
-                .then(response => (this.category = response.data));
-    
-    }
-})
 
-// продукти по категорії
 
-var products_by_category = new Vue({
-    el:'#products_by_category',
-    data:{
-        products_by_category:[]
-    },
-    mounted(){
-        axios
-            .get('/catalog/category/products/' + getIdFromUrl())
-                .then(response => (this.products_by_category = response.data));
-    
-    }
-})
+});
+
+
+
+
 // бокове меню в каталозі та кожній секції
-Vue.component('amenu',{
+Vue.component('amenu', {
     template: ` <div class="section">
-                    <div class='section__item'><a href="catalog.html"> КАТАЛОГ </a> </div>
                     <div class='section__item' v-for="item in menu_items">
-                        <a :href='"section.html?id="+item.id+"#"+item.id'>{{item.name}}</a>
+                        <a :href='"catalog.html?id="+item.id+"#"+item.id'>{{item.name}}</a>
                     </div>
                 </div>`,
-    data: function(){
-        return{
-            menu_items:[],
+    data: function () {
+        return {
+            menu_items: [],
         }
     },
     mounted() {
         axios
             .get('/catalog/categories/')
-                .then(response => (this.menu_items = response.data));
-        }
+            .then(response => (this.menu_items = response.data));
+    }
 
 })
 
 
-// кожен окремий товар
+
+// кожен окремий товар+
 var menu = new Vue({
-    el:'#product',
-    data:{
+    el: '#product',
+    data: {
         item: {}
     },
-        
+
     mounted() {
         axios
-            .get('/catalog/products/'+getIdFromUrl()) 
-                .then(response => (this.item = response.data));
-        },
+            .get('/catalog/products/' + getIdFromUrl())
+            .then(response => (this.item = response.data));
+    },
     methods: {
-        updateProduct: function(index){
-        this.selectedVariant = index
-    }},
-    computed:{
-        image(){
-        return this.variants[this.selectedVariant].variantImage
-    }},
-    
+        updateProduct: function (index) {
+            this.selectedVariant = index
+        }
+    },
+    computed: {
+        image() {
+            return this.variants[this.selectedVariant].variantImage
+        }
+    },
+
 
 })
 
 
 // слайдер
-$('.review').slick(
-        { dots: false,
-            arrows:true,
-            infinite: true,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            centerMode: true,
-            centerPadding: '1px',
-            responsive: [
-                {
-                    breakpoint: 1000,
-                    settings: {
-                      slidesToShow: 2,
-                      slidesToScroll: 1
-                    }
-                  },
-                  
-                {
-                  breakpoint: 770,
-                  settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                  }
-                }
-                
-              ]
-        });
+$('.review').slick({
+    dots: false,
+    arrows: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: '1px',
+    responsive: [{
+            breakpoint: 1000,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
 
-$('.video').slick(
-        { dots: false,
-            arrows:false,
-            infinite: true,
-            autoplay: false,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            centerMode: true,
-            centerPadding: '1px',
-            asNavFor: '.videoXS',
-            responsive: [
-                {
-                    breakpoint: 1000,
-                    settings: {
-                      slidesToShow: 1,
-                      slidesToScroll: 1
-                    }
-                  },
-                  
-                {
-                  breakpoint: 770,
-                  settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                  }
-                }
-                
-              ]
-        });
+        {
+            breakpoint: 770,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
 
-$('.videoXS').slick(
-        { dots: false,
-            arrows:true,
-            infinite: true,
-            autoplay: false,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            centerMode: true,
-            centerPadding: '1px',
-            asNavFor: '.video',
-            focusOnSelect: true,
-            responsive: [
-                {
-                    breakpoint: 1000,
-                    settings: {
-                      slidesToShow: 3,
-                      slidesToScroll: 1
-                    }
-                  },
-                  
-                {
-                  breakpoint: 770,
-                  settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1
-                  }
-                }
-                
-              ]
-        }); 
-        
+    ]
+});
+
+$('.video').slick({
+    dots: false,
+    arrows: false,
+    infinite: true,
+    autoplay: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: '1px',
+    asNavFor: '.videoXS',
+    responsive: [{
+            breakpoint: 1000,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        },
+
+        {
+            breakpoint: 770,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+
+    ]
+});
+
+$('.videoXS').slick({
+    dots: false,
+    arrows: true,
+    infinite: true,
+    autoplay: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: '1px',
+    asNavFor: '.video',
+    focusOnSelect: true,
+    responsive: [{
+            breakpoint: 1000,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1
+            }
+        },
+
+        {
+            breakpoint: 770,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1
+            }
+        }
+
+    ]
+});
 
 
- 
+
+
 // Vue.component('category-item', {
 //     props: ['href', 'name'],
-    // клас 'my-menu-item--active' додається, якщо обчислювана властивість isActive == true
-    // посилання береться із обчислюваної властивості isActive
-    // template: `<li class="nav-item active">
-    //     <a  v-bind:class="{active: isActive }" 
-    //         :href="getHref">{{ name }}</a>
-    // </li>`, 
-    //обчислювані властивості
+// клас 'my-menu-item--active' додається, якщо обчислювана властивість isActive == true
+// посилання береться із обчислюваної властивості isActive
+// template: `<li class="nav-item active">
+//     <a  v-bind:class="{active: isActive }" 
+//         :href="getHref">{{ name }}</a>
+// </li>`, 
+//обчислювані властивості
 //     computed: { 
 //         // якщо ми знаходимось на сторінці 'href', тоді повертає true
 //         isActive: function () {
@@ -405,4 +444,47 @@ $('.videoXS').slick(
 //             .get('/catalog/categories/')
 //                 .then(response => (this.menu_items = response.data));
 //         }
+// })
+
+// загрузити більше продуктів
+// var load_more =new Vue({
+//     el:'#load_more',
+//     data:{
+//         more_images: []
+//     },
+//     mounted() {
+//         axios
+//             .get('/catalog/products/9/10')
+//                 .then(response => (this.more_images = response.data));
+//         },
+// })
+
+// кожна категорія
+// var category = new Vue({
+//     el:'#category',
+//     data:{
+//         category:{}
+//     },
+//     mounted(){
+//         axios
+//             .get('/catalog/category/' + getIdFromUrl())
+//                 .then(response => (this.category = response.data));
+
+//     }
+// })
+
+// <!-- <img src="communication/heart_empty_white.png" alt="heart" style="position: absolute; top:15px; right:20px; width:20px; height:20px;"> -->
+
+
+// var products_by_category = new Vue({
+//     el:'#products_by_category',
+//     data:{
+//         products_by_category:[]
+//     },
+//     mounted(){
+//         axios
+//             .get('/catalog/categories/')
+//                 .then(response => (this.products_by_category = response.data));
+
+//     }
 // })

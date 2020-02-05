@@ -17,34 +17,36 @@
         <div class="container">
             <div class="item">
                 <div id="product">
-                        <amenu></amenu>    
-                        <div class="item__photos">
-                            <div class="item__photosMain"><img :src="item.photo_main"/></div>
-                            <div class="item__photosCollection" v-for='(variant,index) in item.variants'
-                            :key='variant.variantId'
-                            class="image"
-                            @mouseover="updateProduct(index)">
-                                <img :src="variant.variantImageSmall"/>
-                            </div> 
-                        </div>
-                        <div class="item__info">
-                            <div class="item__mobile">
-                                <div> КАТАЛОГ > {{item.category}} > {{item.name}}</div>
-                                <div class="item__infoName">{{item.name}}</div>
-                                <div class="item__infoAvailability" v-if='item.inventory <= 0'>нема в наявності</div>
-                                <div class="item__infoPrice">{{item.price}}</div>
-                                <div class="item__infoCharacteristics">
-                                    <div class="item__infoTitle"> ОПИС:</div>
-                                    <div class="item__infoDescription">{{item.description}}</div>
-                                    <div class="item__infoTitle"> СКЛАД:</div>
-                                    <div class="item__infoDescription">{{item.ingridients}}</div>
-                                    <div class="item__infoTitle"> РОЗМІРИ:</div>
-                                    <div class="item__infoDescription">{{item.size}}</div>
-                                    <div class="item__infoTitle"> ВИРОБНИЦТВО:</div>
-                                    <div class="item__infoDescription">{{item.production}}</div>
-                                </div>
+                    <amenu></amenu> 
+                
+                <div id="products_by_category">
+                    <div class="item__photos">
+                        <div class="item__photosMain"><img :src="item.photo_main"/></div>
+                        <div class="item__photosCollection" v-for='(variant,index) in item.variants'
+                        :key='variant.variantId'
+                        class="image"
+                        @mouseover="updateProduct(index)">
+                            <img :src="variant.variantImageSmall"/>
+                        </div> 
+                    </div>
+                    <div class="item__info">
+                        <div class="item__mobile">
+                            <div> КАТАЛОГ > {{item.category}} > {{item.name}}</div>
+                            <div class="item__infoName">{{item.name}}</div>
+                            <div class="item__infoAvailability" v-if='item.inventory <= 0'>нема в наявності</div>
+                            <div class="item__infoPrice">{{item.price}}</div>
+                            <div class="item__infoCharacteristics">
+                                <div class="item__infoTitle"> ОПИС:</div>
+                                <div class="item__infoDescription">{{item.description}}</div>
+                                <div class="item__infoTitle"> СКЛАД:</div>
+                                <div class="item__infoDescription">{{item.ingridients}}</div>
+                                <div class="item__infoTitle"> РОЗМІРИ:</div>
+                                <div class="item__infoDescription">{{item.size}}</div>
+                                <div class="item__infoTitle"> ВИРОБНИЦТВО:</div>
+                                <div class="item__infoDescription">{{item.production}}</div>
                             </div>
                         </div>
+                    </div>
                     
                 </div>
                 <div class="btn btn default"> <button class="item__button btn btn-info" type="button" data-toggle="modal" data-target="#myModal">ЗАМОВИТИ</button></div>
@@ -56,11 +58,27 @@
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
                             <div class="modal-body">
-                                <div class="inner-addon left-addon button" style="width:400px; margin-left: auto; margin-right: auto; margin-top: 40px;">
-                                    <span class="glyphicon glyphicon-earphone" style="margin-top:-5px;" aria-hidden="true" ></span>
-                                    <input type="tel" required class="aform__phone form-control" > 
-                                </div>
-                                <div style="width:400px; margin-left: auto; margin-right: auto; margin-top: 40px;"><button class="btn btn-default aform__button" > НАДІСЛАТИ</button></div>
+
+                                <form action="https://postmail.invotes.com/send"  method="post" id="email_form">
+                                    <div class="inner-addon left-addon" style="width:400px; margin-left: auto; margin-right: auto; margin-top: 40px;">
+                                        <span class="glyphicon glyphicon-user"  aria-hidden="true" ></span>
+                                        <input type="text" name="subject"  required class="aform__phone form-control" > 
+                                    </div>
+
+                                    <div class="inner-addon left-addon" style="width:400px; margin-left: auto; margin-right: auto; margin-top: 40px;">
+                                        <span class="glyphicon glyphicon-earphone" aria-hidden="true" ></span>
+                                        <input  name="text" type="tel" required class="aform__phone form-control" > 
+                                    </div>
+
+                                    <input type="hidden" name="access_token" value="qp1drloqnw1mxctkju6yz7rp" />
+                                    <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
+                                    <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
+
+                                    <div class="btn btn default" style="margin-top:30px; width:400px; margin-left:auto; margin-right: auto;"> <button id="submit_form" type="submit" data-toggle="modal" data-target="#myModal2" class="aform__button">ЗАМОВИТИ</button></div>
+                                    <!-- <input id="submit_form" type="submit" value="НАДІСЛАТИ" class="btn btn-primary  aform__button"/> -->
+                                    <!-- <div ><a id="mail-link" class="btn btn-primary  aform__button"> НАДІСЛАТИ</a></div> -->
+                                </form>
+
                             </div>
                             <div class="modal-footer">
                                 <img src="logo-black.png"  style="width:100px;  margin-left: auto; margin-right: auto;" alt="logo">
@@ -70,34 +88,29 @@
                         </div>
                       </div>
   
-                    </div> 
-  
-  
-
-
-            </div> 
-            <div class="thank-form">
-            <div class="modal fade" id="myModal" role="dialog">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
+        
+            <div class="modal fade" id="myModal2" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
                         
                         <div class="modal-header">
-                            <p> Очікуйте на дзвінок<br>Дякуємо, що обрали Khaby.</p>
+                            <p class="modal-title text-center " style="margin-left:150px;">  Очікуйте на дзвінок<br>Дякуємо, що обрали Khaby.</p>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
+
                         <div class="modal-body">
-                            <div class="thank-form__heart"> <img src="communication/heart.png" alt="heart"/></div>
+                            <div class="thank-form__heart" > <img src="communication/heart.png" alt="heart"/></div>
                         </div>
+
                         <div class="modal-footer">
                             <img src="logo-black.png"  style="width:100px;  margin-left: auto; margin-right: auto;" alt="logo">
                         </div>
-                      </div>
-                      
                     </div>
-                  </div>
-
-                </div> 
+                </div>
+            </div>
         </div>
+    </div> 
+</div>
 
         <div id="footer">
             <afooter></afooter>
@@ -112,5 +125,19 @@
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="shop.js"></script>
+<!-- 
+<script>
+    $(function() {                       //run when the DOM is ready
+        $(".#submit_form").click(function() {  //use a class, since your ID gets mangled
+            $('.thank-form').removeClass("d-none");      //add the class to the clicked element
+        });
+        });
+ ;
+
+</script> -->
+
+
+
+
     </body>
 </html>

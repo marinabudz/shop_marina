@@ -109,8 +109,8 @@ body {
     color: black;
     border: 1px solid white;
     background-color: white;
-    top: 425px;
-    right: 10px;
+    top: 0px;
+    right: 0px;
     font-style: normal;
     font-weight: normal;
     font-size: 12px; }
@@ -123,8 +123,8 @@ body {
     color: white;
     border: 1px solid black;
     background-color: black;
-    top: 425px;
-    right: 10px;
+    top: 0px;
+    right: 0px;
     font-style: normal;
     font-weight: normal;
     font-size: 12px; }
@@ -149,7 +149,7 @@ body {
   flex-wrap: wrap;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
-  @media screen and (max-width: 1140px) {
+  @media screen and (max-width: 940px) {
     .pictures {
       padding-left: 0;
       width: 100%; } }
@@ -158,8 +158,8 @@ body {
     color: black;
     border: 1px solid white;
     background-color: white;
-    top: 465px;
-    right: 10px;
+    top: 0px;
+    right: 0px;
     font-style: normal;
     font-weight: normal;
     font-size: 12px; }
@@ -172,8 +172,8 @@ body {
     color: white;
     border: 1px solid black;
     background-color: black;
-    top: 465px;
-    right: 10px;
+    top: 0px;
+    right: 0px;
     font-style: normal;
     font-weight: normal;
     font-size: 12px; }
@@ -186,7 +186,7 @@ body {
     margin-bottom: 30px;
     margin-right: auto;
     margin-left: auto; }
-    @media screen and (max-width: 1140px) {
+    @media screen and (max-width: 940px) {
       .pictures__main {
         width: 100%;
         padding-left: 0px;
@@ -194,7 +194,7 @@ body {
   .pictures__main img {
     width: 100%;
     height: auto; }
-    @media screen and (max-width: 1140px) {
+    @media screen and (max-width: 940px) {
       .pictures__main img {
         width: 100%; } }
   .pictures__list {
@@ -203,7 +203,16 @@ body {
     box-sizing: border-box;
     margin-bottom: 50px;
     height: 600px;
-    width: 350px; }
+    width: 350px;
+    padding-left: 20px; }
+    @media screen and (max-width: 940px) {
+      .pictures__list {
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 0px;
+        padding-left: 20px;
+        margin-bottom: 90px; } }
   .pictures__list img {
     margin-bottom: 10px;
     height: auto;
@@ -543,7 +552,8 @@ body {
 
 .item {
   font-family: "Lato", sans-serif;
-  position: relative; }
+  position: relative;
+  height: auto; }
   .item__photos {
     float: left;
     padding-right: 20px; }
@@ -587,8 +597,11 @@ body {
     width: 100%;
     height: auto; }
   .item__info {
-    padding-top: 30px; }
-    @media screen and (max-width: 1140px) {
+    padding-top: 30px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto; }
+    @media screen and (max-width: 940px) {
       .item__info {
         width: 80%;
         height: auto;
@@ -638,39 +651,18 @@ body {
     border-radius: 3px;
     margin-left: -17px;
     border: 0px;
-    margin-top: -10px; }
+    margin-bottom: 140%; }
     @media screen and (max-width: 1140px) {
       .item__button {
-        position: absolute;
-        top: 7%;
-        left: 30%; } }
+        margin-bottom: 70%;
+        margin-left: 40px; } }
   @media screen and (max-width: 1140px) {
     .item__mobile {
       margin-top: 20%; } }
 
-.client-form {
-  display: none;
-  position: absolute;
-  padding-top: 40px;
-  background-color: white;
-  top: 90%;
-  left: 34%;
-  width: 35%;
-  height: 360px;
-  text-align: center;
-  font-weight: 550;
-  font-size: 16px; }
-
-.shadow {
-  opacity: 0.6;
-  background-color: #343434; }
-
-.close-form {
-  top: 10px;
-  right: 0;
-  position: absolute;
-  width: 40px;
-  height: 30px; }
+@media screen and (max-width: 1140px) {
+  .modal-body {
+    display: block; } }
 
 .aform {
   width: 80%;
@@ -682,20 +674,18 @@ body {
     width: 400px;
     height: 40px;
     margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 40px; }
+    margin-right: auto; }
   .aform__button {
     width: 400px;
-    margin-right: auto;
-    margin-left: auto;
+    margin-left: 40px;
     background-color: black;
     color: white;
     font-weight: 500;
     height: 50px;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    margin-top: 50px; }
 
 .thank-form {
-  display: none;
   position: absolute;
   padding-top: 40px;
   background-color: white;
@@ -707,7 +697,10 @@ body {
   font-weight: 550;
   font-size: 16px; }
   .thank-form__heart {
-    margin-top: 50px; }
+    margin-top: 50px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto; }
   .thank-form__logo {
     margin-top: 70px; }
 
